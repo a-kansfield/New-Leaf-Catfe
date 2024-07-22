@@ -1,0 +1,84 @@
+
+$bg-clr: #e2e6e9;
+$action-btn: #dfb9c1;
+$txt-clr: #817578;
+$txt-clr-hvr: #12aebc;
+
+#logo {
+    min-width: 64px;
+    padding: 0;
+}
+.navbar {
+    background-color: $bg-clr;
+
+    #nav-shine {
+        display: flex;
+        flex-wrap: nowrap;
+        position: absolute;
+        // background: red;
+        left: -10vw;
+        width: 70px;
+        height: 100%;
+        transition: .2s ease-in-out;
+    }
+
+    .hover-shape {
+        z-index: -1 ;
+        opacity: 90%;
+        height: 100%;
+        width: 30px;
+        background-color: rgb(250, 243, 237);
+        transform: skew(-15deg);
+        
+    }
+
+    .hover-lg {
+        margin-left: 7px;
+    }
+
+    .hover-sm {
+        height: 100%;
+        width: 15px;
+
+    }
+
+    .nav-link {
+        color: $txt-clr;
+        &:hover {
+            color: $txt-clr-hvr;
+        }
+    }
+
+    box-shadow: 0px 1px 8px 0px #9fbbce;
+    &:hover {
+        box-shadow: 0px 2px 10px 0px #9fbbce;
+        #nav-shine {
+            div {
+                transform: translateX(110vw ) skew(-15deg);
+                transition: .7s ease-in-out;
+            }
+        }
+    }
+    
+}
+
+.login-container {
+    margin-left: 2rem;
+    background-color: red;
+    border-radius: 15px;
+}
+
+#custom-logo-positioning {
+
+    display: flex;
+    justify-content: center;
+    img {
+
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6rem;
+    }
+}
+

@@ -1,0 +1,64 @@
+#logo {
+  min-width: 64px;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #e2e6e9;
+  box-shadow: 0px 1px 8px 0px #9fbbce;
+}
+.navbar #nav-shine {
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute;
+  left: -10vw;
+  width: 70px;
+  height: 100%;
+  transition: 0.2s ease-in-out;
+}
+.navbar .hover-shape {
+  z-index: -1;
+  opacity: 90%;
+  height: 100%;
+  width: 30px;
+  background-color: rgb(250, 243, 237);
+  transform: skew(-15deg);
+}
+.navbar .hover-lg {
+  margin-left: 7px;
+}
+.navbar .hover-sm {
+  height: 100%;
+  width: 15px;
+}
+.navbar .nav-link {
+  color: #817578;
+}
+.navbar .nav-link:hover {
+  color: #12aebc;
+}
+.navbar:hover {
+  box-shadow: 0px 2px 10px 0px #9fbbce;
+}
+.navbar:hover #nav-shine div {
+  transform: translateX(110vw) skew(-15deg);
+  transition: 0.7s ease-in-out;
+}
+
+.login-container {
+  margin-left: 2rem;
+  background-color: red;
+  border-radius: 15px;
+}
+
+#custom-logo-positioning {
+  display: flex;
+  justify-content: center;
+}
+#custom-logo-positioning img {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6rem;
+}/*# sourceMappingURL=nav.css.map */

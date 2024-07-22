@@ -1,0 +1,159 @@
+/* -------------------- ------ -------------------- */
+/* -------------------- NAVBAR -------------------- */
+/* -------------------- ------ -------------------- */
+// $bg-clr: #2f404c;
+// $action-btn: #a32843;
+// $txt-clr: #ffddc9;
+
+$bg-clr: #e2e6e9;
+$action-btn: #dfb9c1;
+$txt-clr: #251a13;
+
+    /* ------------ General Navbar Section ------------ */
+    #navbar-container {
+        display: flex;
+        justify-content: space-between;
+        height: 4rem;
+        width: 100%;
+        background: $bg-clr;
+        box-shadow: 0px 3px 15px 0px #9fbbce;
+    }
+    
+    /* ------------ General Navbar Section ------------ */
+    .navbar-section {
+        display: flex;
+        justify-content: flex-start;
+        width: 40%;
+        height: 100%;
+        font-family: "Comfortaa", sans-serif;
+        font-size: .9rem;
+        letter-spacing: .1rem;
+        font-weight: 800;
+    }
+
+    .navbar-section {
+        display: flex;
+        align-items: space-around;
+    }
+    
+    .navbar-section a{
+        text-align: center;
+        flex: 1;
+        align-self: center;
+        text-decoration: none;
+        color: $txt-clr;
+        transition-duration: .2s; 
+    }
+    
+    .navbar-section a:hover {
+        color: #fff2ea;
+        transition-duration: .2s; 
+    }
+    
+
+    #navbar-end {
+        flex-direction: row-reverse;
+    }
+
+    #navbar-end a {
+        flex-direction: row-reverse;
+        
+    }
+
+    .sign-in {
+        display: flex;
+        background-color: rgb(230, 183, 183);
+        overflow: hidden;
+        border-radius: 20px;
+        align-items: center;
+        // width: 20%;
+        flex-direction: row-reverse;
+        align-self: center;
+        flex-grow: 0;
+        height: 80%;
+    }
+
+    .user-sign-in {
+        text-align: center;
+        padding: .5rem;
+        width: 100%;
+        
+    }
+    
+    #login-btn {
+        
+        border-right: 2px solid blue;
+        background-color: chocolate;
+        height: 100%;
+    }
+    #login-btn:hover {
+        background: #3e5863;
+    }
+    #signup-btn {
+        height: 100%;
+        min-width: 75px;
+        background: $action-btn;
+        // border: 1px solid #000000;
+        border-radius: 4px;
+    }
+    
+    #signup-btn:hover{
+        background: #ca3455;
+        color: #ffffff;
+    }
+    /* ------------ Logo (Center) ------------ */
+    #logo {
+        min-width: 128px;
+        height: 200%;
+    }
+
+
+
+
+
+/* ------------ ------------- ------------- */
+/* ------------ Media Queries ------------- */
+/* ------------ ------------- ------------- */
+
+
+/* ------------ Max Width CSS ------------ */
+@media (min-width: 1170px) {
+    /* empty media query - just here for the sake of completion */
+}
+
+/* ------------ Medium Width CSS ------------ */
+/* @media (max-width: 1000px) {
+    #navbar-end a:last-child {
+        margin: 0%;
+    }
+} */
+
+@media (max-width: 755px) {
+    #navbar-end a:last-child {
+        margin: 0%;
+        text-align: left;
+
+    }
+    #logo{
+        visibility: hidden;
+        position: absolute;
+    }
+
+    #navbar-start {
+        width: 50%;
+        
+    }
+    
+    #navbar-end a:last-child {
+        margin-left: 7%;
+
+    }
+    #navbar-start a:first-child {
+        margin-left: 7%;
+        margin-right: 0%;
+
+    }
+    #navbar-end {
+        width: 50%;
+    }
+}
