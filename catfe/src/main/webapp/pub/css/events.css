@@ -1,0 +1,232 @@
+.event-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.event-container a {
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: rgb(243, 242, 232);
+}
+
+.event-object-container {
+  background: rgb(215, 215, 215);
+  display: flex;
+  height: auto;
+  width: 90%;
+  border-radius: 0.7rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+.event-object-container .image-container {
+  overflow: hidden;
+  margin: 1.5rem;
+  margin-right: 0.5rem;
+  height: 290px;
+  width: auto;
+  border-radius: 0.7rem;
+}
+.event-object-container .image-container .event-image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.event-object-container .text-container {
+  display: flex;
+  flex-direction: column;
+  background: rgb(244, 244, 244);
+  height: auto;
+  border-radius: 1rem;
+  padding: 1rem;
+  flex: 1;
+  margin: 1.5rem;
+  margin-left: 0.5rem;
+}
+.event-object-container .text-container .event-title {
+  font-family: "Blogger Sans";
+  font-weight: 500;
+  letter-spacing: 1px;
+  width: 60%;
+  height: 2.5rem;
+  margin: 0.6rem;
+  margin-left: 0;
+}
+.event-object-container .text-container .text-body {
+  font-family: "Blogger Sans";
+  font-weight: 300;
+  width: 100%;
+  height: auto;
+}
+.event-object-container .text-container .btn-date-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.event-object-container .text-container .btn-date-row .event-date {
+  font-family: "Blogger Sans";
+  font-weight: 500;
+  font-size: 1.2rem;
+  width: auto;
+  height: 2.5rem;
+  margin: 1rem;
+}
+.event-object-container .text-container .btn-date-row .rsvp-button {
+  border: none;
+  border-radius: 0.3rem;
+  margin: 1rem;
+  background: rgb(216, 67, 67);
+  align-self: flex-end;
+  width: 6rem;
+  height: 2.5rem;
+}
+
+.rsvp-container {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 900px;
+  background-color: rgb(197, 197, 197);
+}
+.rsvp-container .rsvp-event-info {
+  margin: 1rem;
+  padding: 1rem;
+  flex-grow: 0.5;
+  width: 100px;
+  height: 600px;
+  background: rgb(156, 156, 156);
+}
+.rsvp-container .rsvp-event-info .image-container {
+  overflow: hidden;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 2/1.5;
+  border-radius: 0.7rem;
+}
+.rsvp-container .rsvp-event-info .image-container .event-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.rsvp-container .rsvp-form {
+  margin: 1rem;
+  flex-grow: 1.1;
+  width: 100px;
+  height: 600px;
+  background: rgb(156, 156, 156);
+}
+.rsvp-container .rsvp-cat-info {
+  margin: 1rem;
+  flex-grow: 0.5;
+  width: 100px;
+  height: 600px;
+  background: rgb(156, 156, 156);
+}
+
+@media (width <= 768px) {
+  .event-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .event-object-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .event-object-container .image-container {
+    margin: 15px;
+    height: 80px;
+    width: 90%;
+    border-radius: 0.7rem;
+  }
+  .event-object-container .image-container .event-image {
+    object-fit: cover;
+  }
+  .event-object-container .sm-size {
+    height: 80px;
+    width: 90%;
+  }
+  .event-object-container .text-container {
+    display: flex;
+    align-items: center;
+    height: auto;
+    margin: 1rem;
+  }
+  .event-object-container .text-container .event-title {
+    margin: 1rem;
+    text-align: center;
+  }
+  .event-object-container .text-container .text-body {
+    text-align: center;
+    height: auto;
+  }
+  .event-object-container .btn-date-row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+  }
+  .event-object-container .btn-date-row .rsvp-button {
+    border: none;
+    text-align: center;
+    text-justify: auto;
+  }
+}
+@media (769px <= width <= 1200px) {
+  .event-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .event-object-container {
+    flex-direction: row;
+    justify-content: stretch;
+    height: auto;
+  }
+  .event-object-container .image-container {
+    overflow: hidden;
+    margin: 15px;
+    max-height: 450px;
+    width: 100px;
+    border-radius: 0.7rem;
+  }
+  .event-object-container .image-container .event-image {
+    object-fit: cover;
+  }
+  .event-object-container .text-container {
+    display: flex;
+    align-items: center;
+    height: auto;
+    margin: 1rem;
+  }
+  .event-object-container .text-container .event-title {
+    margin: 1rem;
+    text-align: center;
+  }
+  .event-object-container .text-container .text-body {
+    text-align: center;
+    height: auto;
+  }
+  .event-object-container .btn-date-row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+  }
+  .event-object-container .btn-date-row .rsvp-button {
+    border: none;
+    text-align: center;
+    text-justify: auto;
+  }
+}
+
+/*# sourceMappingURL=events.css.map */

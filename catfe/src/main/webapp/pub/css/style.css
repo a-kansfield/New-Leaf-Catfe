@@ -1,0 +1,20 @@
+.title {
+  color: #201e1c;
+  font-family: "Vintage One", serif;
+  text-align: center;
+  font-size: 5rem;
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+}
+
+.title-hr {
+  opacity: 60%;
+  width: 100vw;
+  height: 2px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 46%, rgb(0, 0, 0) 58%, rgba(0, 0, 0, 0) 100%);
+}
+
+.header {
+  background-color: #e7eeee;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,64 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  margin-top: 15rem;
+  margin-left: 2rem;
+  /* background-color: rgb(238, 238, 238); */
+  height: 30rem;
+  width: 100vw;
+  align-items: center;
+}
+.hero .hero-flex-item {
+  display: flex;
+  width: auto;
+  justify-content: space-evenly;
+}
+.hero .text-container {
+  display: flex;
+  justify-content: start;
+  margin: 2rem;
+  margin-right: 16rem;
+  background-color: rgb(204, 204, 204);
+  min-width: 700px;
+  max-width: 1000px;
+  height: 400px;
+  border-radius: 2rem;
+  flex-grow: 0.9;
+}
+.hero .drink-img {
+  flex-shrink: 0;
+  z-index: 0;
+  margin-left: -400px;
+  margin-top: 260px;
+  width: 300px;
+  height: 300px;
+  border: rgb(114, 114, 114) 0.8rem solid;
+  border-radius: 90%;
+  background-color: rgb(224, 224, 224);
+}
+
+.flip-horizontal {
+  margin-left: -2rem;
+  margin-top: 5rem;
+  transform: scaleX(-1);
+}
+
+.circle {
+  border-radius: 100%;
+}
+
+.cat-img {
+  flex-shrink: 0;
+  z-index: 2;
+  margin-left: -440px;
+  margin-top: -300px;
+  width: 380px;
+  height: 380px;
+  border: rgb(82, 82, 82) 1rem solid;
+  border-radius: 90%;
+  background-color: rgb(136, 136, 136);
+  transition: cubic-bezier(0.37, -0.02, 0.17, 0.88), 1s;
+}
+.cat-img:hover {
+  transform: scale(1.15);
+}/*# sourceMappingURL=landing.css.map */

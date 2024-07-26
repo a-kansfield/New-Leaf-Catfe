@@ -1,0 +1,300 @@
+/////////////////////////////////////////////////////////////
+///////////////////////// Event List ////////////////////////
+/////////////////////////////////////////////////////////////
+
+$spacing: 1.5rem;
+
+.event-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    // background: rgb(238, 238, 238);
+    padding-top: $spacing;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+        letter-spacing: 1px;
+        color: rgb(243, 242, 232);
+    }
+
+}
+
+.event-object-container {
+
+    background: rgb(215, 215, 215);
+    display: flex;
+    height: auto;
+    width: 90%;
+    border-radius: .7rem;
+    margin-top: $spacing;
+    margin-bottom: $spacing;
+    justify-content: flex-start;
+    align-items: center;
+
+    .image-container {
+        
+        overflow: hidden;
+        margin: $spacing;
+        margin-right: .5rem;
+        height: 290px;
+        width: auto;
+        border-radius: .7rem;
+
+        .event-image {
+
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+
+        }
+    }
+
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        background: rgb(244, 244, 244);
+        height: auto;
+        border-radius: 1rem;
+        padding: 1rem;
+        flex: 1;
+        margin: $spacing;
+        margin-left: .5rem;
+
+        .event-title {
+            // background: rgb(43, 43, 43);
+            font-family:'Blogger Sans';
+            font-weight: 500;
+            letter-spacing: 1px;
+            width: 60%;
+            height: 2.5rem;
+            margin: .6rem;
+            margin-left: 0;
+        }
+
+        .text-body {
+            font-family:'Blogger Sans';
+            font-weight: 300;
+            // background: rgb(75, 75, 75);
+            width: 100%;
+            height: auto;
+        }
+        .btn-date-row{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            .event-date{
+                font-family:'Blogger Sans';
+                font-weight: 500;
+                font-size: 1.2rem;
+                width: auto;
+                height: 2.5rem;
+                margin: 1rem;
+            }
+            .rsvp-button {
+                border: none;
+                border-radius: .3rem;
+                margin: 1rem;
+                background: rgb(216, 67, 67);
+                align-self: flex-end;
+                width: 6rem;
+                height: 2.5rem;
+
+            }
+        }
+        
+    }
+}
+
+
+/////////////////////////////////////////////////////////////
+///////////////////////// Event Form ////////////////////////
+/////////////////////////////////////////////////////////////
+
+.rsvp-container {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 900px;
+    background-color: rgb(197, 197, 197);
+
+    .rsvp-event-info {
+        margin: 1rem;
+        padding: 1rem;
+        flex-grow: .5;
+        width: 100px;
+        height: 600px;
+        background: rgb(156, 156, 156);
+        .image-container {
+            overflow: hidden;
+            height: auto;
+            width: 100%;
+            aspect-ratio: 2 / 1.5;
+            border-radius: .7rem;
+            .event-image {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .rsvp-form {
+        margin: 1rem;
+        flex-grow: 1.1;
+        width: 100px;
+        height: 600px;
+        background: rgb(156, 156, 156);
+        
+    }
+    .rsvp-cat-info {
+        margin: 1rem;
+        flex-grow: .5;
+        width: 100px;
+        height: 600px;
+        background: rgb(156, 156, 156);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//X-Small and Small
+@media (width <= 768px) {
+
+/////////////////////////////////////////////////////////////
+///////////////////////// Event List ////////////////////////
+/////////////////////////////////////////////////////////////
+    .event-container {
+        display: flex;
+        flex-direction: column;
+        // background: rgb(238, 238, 238);
+        padding-top: $spacing;
+        justify-content: center;
+        align-items:center;
+    
+    }
+    .event-object-container {
+        flex-direction: column;
+        
+        height: auto;
+        .image-container {
+            margin: 15px;
+            height: 80px;
+            width: 90%;
+            border-radius: .7rem;
+            .event-image {
+                object-fit: cover;
+            }
+        }
+        .sm-size {
+            height: 80px;
+            width: 90%;
+        }
+
+        .text-container{
+            display: flex;
+            align-items: center;
+            height: auto;
+            margin: 1rem;
+            .event-title {
+                margin: 1rem;
+                text-align: center;
+            }
+            .text-body{
+                text-align: center;
+                height: auto;
+            }
+        }
+
+        .btn-date-row {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            .rsvp-button {
+                border: none;
+                text-align: center;
+                text-justify: auto;
+            }
+        }
+    }
+}
+
+//Medium and Large
+
+/////////////////////////////////////////////////////////////
+///////////////////////// Event List ////////////////////////
+/////////////////////////////////////////////////////////////
+
+@media ( 769px <= width <= 1200px) {
+    
+    .event-container {
+        display: flex;
+        flex-direction: column;
+        // background: rgb(238, 238, 238);
+        padding-top: $spacing;
+        justify-content: center;
+        align-items:center;
+    
+    }
+    .event-object-container {
+        flex-direction: row;
+        justify-content: stretch;
+        height: auto;
+        .image-container {
+            overflow: hidden;
+            margin: 15px;
+            max-height: 450px;
+            width: 100px;
+            border-radius: .7rem;
+
+            .event-image {
+                object-fit: cover;
+            }
+        }
+
+        .text-container {
+
+            display: flex;
+            align-items: center;
+            height: auto;
+            margin: 1rem;
+
+            .event-title {
+                margin: 1rem;
+                text-align: center;
+            }
+            .text-body{
+                text-align: center;
+                height: auto;
+            }
+        }
+
+        .btn-date-row {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            
+            .rsvp-button {
+                border: none;
+                text-align: center;
+                text-justify: auto;
+            }
+        }
+    }
+}
+
+//Extra Large

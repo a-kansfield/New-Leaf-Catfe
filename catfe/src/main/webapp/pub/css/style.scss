@@ -1,0 +1,33 @@
+// GENERAL
+
+$bg-clr: #e2e6e9;
+$action-btn: #dfb9c1;
+$txt-fade-clr: #817578;
+$txt-clr-hvr: #12aebc;
+
+$logo-blue: #3b9696;
+$logo-cream: #ffddc9;
+
+$txt-clr: #201e1c;
+
+.title { 
+    color: $txt-clr;
+    font-family: 'Vintage One', serif;
+    text-align: center;
+    font-size: 5rem;
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+
+}
+.title-hr {
+    opacity: 60%;
+    width: 100vw;
+    height: 2px;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 46%, rgba(0,0,0,1) 58%, rgba(0,0,0,0) 100%);
+
+}
+
+.header {
+    background-color:#e7eeee;
+}
