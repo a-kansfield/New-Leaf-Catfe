@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/pub/css/nav.css">
     <link rel="stylesheet" href="/pub/css/landing.css">
     <link rel="stylesheet" href="/pub/css/events.css">
-
+    <link rel="stylesheet" href="/pub/css/cats.css">
 
 
     <!------- Fonts ------->
@@ -53,7 +53,6 @@
 
 
     <div class="collapse navbar-collapse justify-content-between overflow-visible" id="navbarNav">
-
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a href="/" class="nav-link active">

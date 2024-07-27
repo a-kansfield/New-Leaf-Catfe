@@ -1,8 +1,26 @@
 /////////////////////////////////////////////////////////////
+//.......................... EVENTS .......................//
+/////////////////////////////////////////////////////////////
+
+
+
+
+$action-clr: rgb(216, 67, 67);
+$action-txt: rgb(243, 242, 232);
+$spacing: 1.5rem;
+
+/////////////////////////////////////////////////////////////
+////////////////////////// General //////////////////////////
+/////////////////////////////////////////////////////////////
+
+.title {
+    font-size: 5rem;
+}
+
+/////////////////////////////////////////////////////////////
 ///////////////////////// Event List ////////////////////////
 /////////////////////////////////////////////////////////////
 
-$spacing: 1.5rem;
 
 .event-container {
     margin-top: 1rem;
@@ -16,7 +34,7 @@ $spacing: 1.5rem;
     a {
         text-decoration: none;
         letter-spacing: 1px;
-        color: rgb(243, 242, 232);
+        color: $action-txt
     }
 
 }
@@ -85,7 +103,7 @@ $spacing: 1.5rem;
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
-            .event-date{
+            .event-date {
                 font-family:'Blogger Sans';
                 font-weight: 500;
                 font-size: 1.2rem;
@@ -97,7 +115,7 @@ $spacing: 1.5rem;
                 border: none;
                 border-radius: .3rem;
                 margin: 1rem;
-                background: rgb(216, 67, 67);
+                background: $action-clr;
                 align-self: flex-end;
                 width: 6rem;
                 height: 2.5rem;
@@ -114,48 +132,165 @@ $spacing: 1.5rem;
 /////////////////////////////////////////////////////////////
 
 .rsvp-container {
+    font-family: 'Blogger Sans', 'Comfortaa', Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 5rem;
     display: flex;
+    
     flex-direction: row;
-    justify-content: space-between;
     width: 100%;
-    height: 900px;
-    background-color: rgb(197, 197, 197);
+    height: auto;
+    border-radius: .7rem;
+    // background-color: rgb(197, 197, 197);
 
     .rsvp-event-info {
+
+        display: flex;
+        flex-direction: column;
+
         margin: 1rem;
         padding: 1rem;
         flex-grow: .5;
         width: 100px;
-        height: 600px;
+        height: auto;
         background: rgb(156, 156, 156);
+        border-radius: .7rem;
+
         .image-container {
+
             overflow: hidden;
             height: auto;
             width: 100%;
             aspect-ratio: 2 / 1.5;
             border-radius: .7rem;
+
             .event-image {
                 object-fit: cover;
                 width: 100%;
                 height: 100%;
             }
         }
+
+        .text-container{
+
+            display: flex;
+            flex-direction: row;
+            background: rgb(244, 244, 244);
+            height: auto;
+            width: 100%;
+            border-radius: 1rem;
+            flex: 1;
+            margin-top: 1rem;
+            padding: 1rem;
+
+            .rsvp-event-info-txt {
+                height: auto;
+                width: 100%;
+            }
+        }
     }
-    .rsvp-form {
+    .rsvp-form-container {
+
         margin: 1rem;
         flex-grow: 1.1;
         width: 100px;
-        height: 600px;
-        background: rgb(156, 156, 156);
-        
+        height: auto;
+        background: rgb(215, 215, 215);
+        border-radius: .7rem;
+
+        .rsvp-title-container {
+
+            text-align: center;
+            margin: 1rem;
+
+        }
+
+        #event-form {
+            margin: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            max-width: 400px;
+
+            #form-adoption-container {
+                margin: 1rem;
+                h3 {
+                    font-size: 1rem;
+                }
+                .row {
+                    margin: 1rem;
+                }
+            }
+            #alcohol-event {
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                align-items: end;
+            }
+            .submit {
+                display: flex;
+                align-items: end;
+                flex-direction: column;
+                .btn {
+                    margin-top: 2rem;
+                    background-color: $action-clr;
+                    color: $action-txt;
+                }           
+            }
+
+        }
     }
+
     .rsvp-cat-info {
+
+        display: flex;
+        flex-direction: column;
         margin: 1rem;
+        padding: 1rem;
         flex-grow: .5;
         width: 100px;
-        height: 600px;
+        height: auto;
         background: rgb(156, 156, 156);
+        border-radius: .7rem;
+
+        .image-container {
+            overflow: hidden;
+            height: auto;
+            width: 100%;
+            aspect-ratio: 2 / 1.5;
+            border-radius: .7rem;
+
+            .cat-image {
+                
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .text-container{
+
+            display: flex;
+            flex-direction: column;
+            background: rgb(244, 244, 244);
+            height: auto;
+            width: 100%;
+            border-radius: 1rem;
+            flex: 1;
+            margin-top: 1rem;
+
+            .rsvp-cat-name, .rsvp-date{
+                padding: 1rem;
+                padding-top:1.2rem;
+                height: auto;
+                text-align: center;
+            }
+
+            .rsvp-date {
+                font-size: 2rem;
+                color: $action-clr;
+            }
+        }
+        #cat-name-container{
+            max-height: 4rem;
+        } 
     }
 }
 
@@ -172,8 +307,19 @@ $spacing: 1.5rem;
 
 
 
-//X-Small and Small
+//++++++++++++++++++++++++++++++++++++++++++++//
+//++++++++++++++Small and X-Small++++++++++++++++++++++++++//
+//++++++++++++++++++++++++++++++++++++++++++++//
 @media (width <= 768px) {
+
+/////////////////////////////////////////////////////////////
+////////////////////////// General //////////////////////////
+/////////////////////////////////////////////////////////////
+
+    .title {
+        font-size: 3rem;
+    }
+
 
 /////////////////////////////////////////////////////////////
 ///////////////////////// Event List ////////////////////////
@@ -181,7 +327,6 @@ $spacing: 1.5rem;
     .event-container {
         display: flex;
         flex-direction: column;
-        // background: rgb(238, 238, 238);
         padding-top: $spacing;
         justify-content: center;
         align-items:center;
@@ -231,9 +376,56 @@ $spacing: 1.5rem;
             }
         }
     }
-}
 
-//Medium and Large
+////////////////////@media (width <= 768px)//////////////////
+///////////////////////// Event Form ////////////////////////
+/////////////////////////////////////////////////////////////
+
+    .rsvp-container {
+        flex-direction: column;
+        margin-top: 1rem;
+        .rsvp-event-info, .rsvp-form-container, .rsvp-cat-info{
+            width: 100%;
+            margin: 0;
+            margin-top: 1rem;
+        }
+        .rsvp-form-container {
+            #event-form {
+                .submit{
+                    display: flex;
+                    justify-content: center;
+    
+                    .btn {
+                        margin: 1rem;
+                        margin-bottom: 1.5rem;
+                    }
+                }
+            }
+            
+
+        }
+        .rsvp-event-info, .rsvp-cat-info {
+            .image-container {
+                height: 100px;
+                width: auto;
+            }
+        }
+
+    }
+
+} //@media (width <= 768px)
+
+
+
+
+
+
+
+
+
+//++++++++++++++++++++++++++++++++++++++++++++//
+//++++++++++++++Medium and Large++++++++++++++++++++++++++//
+//++++++++++++++++++++++++++++++++++++++++++++//
 
 /////////////////////////////////////////////////////////////
 ///////////////////////// Event List ////////////////////////
@@ -287,7 +479,7 @@ $spacing: 1.5rem;
             display: flex;
             align-items: end;
             justify-content: space-between;
-            
+
             .rsvp-button {
                 border: none;
                 text-align: center;
@@ -295,6 +487,48 @@ $spacing: 1.5rem;
             }
         }
     }
+
+
+    
+////////////////////@media 769px <= width <= 1200px)//////////////////
+///////////////////////// Event Form ////////////////////////
+/////////////////////////////////////////////////////////////
+
+.rsvp-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    .rsvp-event-info, .rsvp-form-container, .rsvp-cat-info{
+        width: 80%;
+        margin: 0;
+        margin-top: 1rem;
+    }
+    .rsvp-form-container {
+        max-width: 600px;
+        #event-form {
+            .submit{
+                display: flex;
+                justify-content: center;
+
+                .btn {
+                    margin: 1rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+        
+
+    }
+    .rsvp-event-info, .rsvp-cat-info {
+        .image-container {
+            height: 100px;
+            width: auto;
+        }
+    }
+
+}
 }
 
-//Extra Large
+//++++++++++++++++++++++++++++++++++++++++++++//
+//+++++++++++++++++++Extra Large++++++++++++++++++++++++++//
+//++++++++++++++++++++++++++++++++++++++++++++//
