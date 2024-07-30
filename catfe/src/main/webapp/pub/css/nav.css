@@ -35,16 +35,22 @@
   height: 100%;
   width: 15px;
 }
-.navbar .nav-link {
+.navbar .nav-link, .navbar .dropdown-toggle {
   color: #817578;
   margin-left: 1rem;
   margin-right: 1rem;
 }
-.navbar .nav-link:hover {
+.navbar .nav-link:hover, .navbar .dropdown-toggle:hover {
   color: #12aebc;
 }
 .navbar:hover {
   box-shadow: 0px 2px 10px 0px #9fbbce;
+}
+
+#admin-dropdown {
+  font-family: "Blogger Sans";
+  border: none;
+  font-size: 1.35rem;
 }
 
 .login-container {
@@ -112,4 +118,6 @@
     transform: translateX(115vw) skew(-15deg);
     transition: 0.9s ease-in-out;
   }
-}/*# sourceMappingURL=nav.css.map */
+}
+
+/*# sourceMappingURL=nav.css.map */

@@ -14,4 +14,10 @@ public class IndexController {
         ModelAndView response = new ModelAndView("home/index");
         return response;
     }
+
+    @GetMapping("/about")
+    public ModelAndView about() {
+        ModelAndView response = new ModelAndView("about/about");
+        return response;
+    }
 }

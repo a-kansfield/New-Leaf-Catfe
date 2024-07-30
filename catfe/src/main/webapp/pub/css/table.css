@@ -1,0 +1,67 @@
+table {
+  border: 2px solid rgba(73, 73, 73, 0.405);
+  font-family: "Blogger Sans";
+  letter-spacing: 1px;
+  margin: 5rem;
+  text-align: center;
+}
+table th {
+  padding: 0.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  font-size: 1.1rem;
+}
+table .center {
+  display: flex;
+  justify-content: center;
+}
+table .center p {
+  margin-top: 20px;
+}
+table thead th:nth-child(1) {
+  width: 5%;
+}
+table thead th:nth-child(2) {
+  width: 15%;
+}
+table thead th:nth-child(3) {
+  width: 10%;
+}
+table thead th:nth-child(4) {
+  width: 50%;
+}
+table thead th:nth-child(5) {
+  width: 20%;
+}
+table thead th:nth-child(6) {
+  width: 10%;
+}
+table thead th:nth-child(7) {
+  width: 5%;
+}
+table .description-column {
+  text-align: left;
+  position: relative;
+  top: -12px;
+}
+table td {
+  border-bottom: 1px solid rgba(72, 72, 72, 0.5);
+}
+table th {
+  padding-top: 10px;
+  background-color: rgb(97, 106, 122);
+  color: white;
+}
+table tbody tr:nth-child(odd) {
+  background: rgb(179, 180, 208);
+  background: linear-gradient(180deg, rgb(223, 215, 220) 0%, rgb(235, 228, 234) 8%, rgb(240, 230, 237) 35%);
+}
+table tbody tr:nth-child(even) {
+  background: rgb(214, 228, 230);
+  background: linear-gradient(180deg, rgb(177, 176, 180) 0%, rgb(199, 198, 202) 8%, rgb(215, 214, 218) 85%);
+}
+table table {
+  background-color: #ff33cc;
+}
+
+/*# sourceMappingURL=table.css.map */

@@ -15,10 +15,13 @@
     <!------- CSS ------->
     <link rel="stylesheet" href="/pub/css/fonts.css">
     <link rel="stylesheet" href="/pub/css/style.css">
+
     <link rel="stylesheet" href="/pub/css/nav.css">
     <link rel="stylesheet" href="/pub/css/landing.css">
     <link rel="stylesheet" href="/pub/css/events.css">
     <link rel="stylesheet" href="/pub/css/cats.css">
+    <link rel="stylesheet" href="/pub/css/account.css">
+    <link rel="stylesheet" href="/pub/css/table.css">
 
 
     <!------- Fonts ------->
@@ -33,7 +36,7 @@
 
     <!-- Show on mobile to medium -->
     <a href="#" class="navbar-brand d-lg-none">
-        Navbar
+        New Leaf Catfe
     </a>
 
     <button
@@ -69,11 +72,7 @@
                     Menu
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="/events/" class="nav-link">
-                    Events
-                </a>
-            </li>
+
         </ul>
 
         <a href="#" class="navbar-brand d-none d-lg-block" id="custom-logo-positioning">
@@ -83,12 +82,28 @@
         </a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="../home/index.html" class="nav-link">
-                    Schedule
-                </a>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="admin-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Admin
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a href="../admin/cats" class="dropdown-item">Cats</a>
+                        <a href="../admin/events" class="dropdown-item">Events</a>
+                    </div>
+                </div>
             </li>
             <li class="nav-item">
-                <a href="../home/index.html" class="nav-link">
+                <a href="../events/" class="nav-link">
+                    Events
+                </a>
+            </li>
+<%--            <li class="nav-item">--%>
+<%--                <a href="../home/index.html" class="nav-link">--%>
+<%--                    Schedule--%>
+<%--                </a>--%>
+<%--            </li>--%>
+            <li class="nav-item">
+                <a href="../about" class="nav-link">
                     About
                 </a>
             </li>
@@ -97,7 +112,7 @@
             <li class="nav-item login-container">
                 <ul class="navbar-nav">
                     <li class="nav-item" id= "login-btn">
-                        <a href="../home/index.html" class="nav-link" id="login-link">
+                        <a href="../account/login" class="nav-link" id="login-link">
                             Login
                         </a>
                     </li>
@@ -105,7 +120,7 @@
                         <div class="login-divider"></div>
                     </li>
                     <li class="nav-item" id="sign-up-btn">
-                        <a href="../home/index.html" class="nav-link" id="sign-up-link">
+                        <a href="../account/sign-up" class="nav-link" id="sign-up-link">
                             Sign Up
                         </a>
                     </li>

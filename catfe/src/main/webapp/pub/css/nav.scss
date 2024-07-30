@@ -49,13 +49,14 @@ $logo-cream: #ffddc9;
 
     }
 
-    .nav-link {
+    .nav-link, .dropdown-toggle {
         color: $txt-clr;
         margin-left: 1rem;
         margin-right: 1rem;
         &:hover {
             color: $txt-clr-hvr;
         }
+
     }
 
     box-shadow: 0px 1px 8px 0px #9fbbce;
@@ -70,7 +71,11 @@ $logo-cream: #ffddc9;
     }
     
 }
-
+#admin-dropdown {
+    font-family:'Blogger Sans';
+    border: none;
+    font-size: 1.35rem;
+}
 .login-container {
     display: flex;
     flex-wrap: nowrap;

@@ -1,3 +1,7 @@
+body {
+  background-color: #e7ecf5;
+}
+
 .title {
   color: #201e1c;
   font-family: "Vintage One", serif;
@@ -16,5 +20,7 @@
 }
 
 .header {
-  background-color: #e7eeee;
-}/*# sourceMappingURL=style.css.map */
+  background: radial-gradient(circle, rgb(240, 233, 246) 0%, rgb(221, 206, 242) 52%, rgb(209, 209, 240) 100%);
+}
+
+/*# sourceMappingURL=style.css.map */

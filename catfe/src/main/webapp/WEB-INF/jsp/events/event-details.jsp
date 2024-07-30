@@ -8,12 +8,11 @@
 <section class=" container rsvp-container">
     <div class="rsvp-event-info">
         <div class="image-container">
-            <img class="event-image" src="../../../pub/assets/imgs/events/tea_book.png" alt="">
+            <img class="event-image" src=${eventDetails.image_url} alt="">
         </div>
         <div class="text-container">
             <div class="rsvp-event-info-txt">
-                [Insert event description here] <br><br>
-                Lorem ipsum odor amet, consectetuer adipiscing elit. Sociosqu turpis mi justo feugiat ac molestie hac. Nisi primis neque blandit platea, nisl dictum potenti tellus.<br><br>Lorem ipsum odor amet, consectetuer adipiscing elit. Sociosqu turpis mi justo feugiat ac molestie hac. Nisi primis neque blandit platea, nisl dictum potenti tellus.
+               ${eventDetails.description}
 
 
             </div>
@@ -23,40 +22,40 @@
 
     <div class="rsvp-form-container">
         <div class="rsvp-title-container">
-            <h2>[Insert Event Name Here]</h2>
+            <h2>${eventDetails.title}</h2>
             <h3>RSVP</h3>
         </div>
-        <form id="event-form" action="">
-            <div id="form-first-name-container">
+        <form id="event-form" action="/events/${id}" method="post">
+            <div id="form-first-name-container form-group">
                 <label for="form-first-name" class="form-label">First Name</label>
-                <input id="form-first-name" class="form-control" type="text">
+                <input id="form-first-name" class="form-control" type="text" value="${form.firstName}">
             </div>
 
-            <div id="form-last-name-container">
+            <div id="form-last-name-container form-group">
                 <label for="form-last-name" class="form-label">Last Name</label>
-                <input id="form-last-name"  class="form-control" type="text">
+                <input id="form-last-name"  class="form-control" type="text" value="${form.lastName}">
             </div>
 
-            <div id="form-email-container">
+            <div id="form-email-container form-group">
                 <label for="form-email" class="form-label">Email</label>
-                <input id="form-email"  class="form-control" type="text">
+                <input id="form-email"  class="form-control" type="text" value="${form.email}">
             </div>
 
             <div id="form-adoption-container">
                 <h3>Are you interested in adopting during this event?</h3>
-                <div class="row">
+                <div class="row form-group">
                     <div class="form-check col">
-                        <input id="form-adoption1"  class="form-check-input" type="radio" name="adoption-interest">
+                        <input id="form-adoption1"  class="form-check-input" type="radio" name="adoption-interest" value="${form.adoptionInterest}">
                         <label for="form-adoption1" class="form-label form-check-label">Yes</label>
 
                     </div>
                     <div class="form-check col">
-                        <input id="form-adoption2"  class="form-check-input" type="radio" name="adoption-interest">
+                        <input id="form-adoption2"  class="form-check-input" type="radio" name="adoption-interest" value="${form.adoptionInterest}">
                         <label for="form-adoption2" class="form-label form-check-label">No</label>
 
                     </div>
                     <div class="form-check col">
-                        <input id="form-adoption3"  class="form-check-input" type="radio" name="adoption-interest">
+                        <input id="form-adoption3"  class="form-check-input" type="radio" name="adoption-interest" value="${form.adoptionInterest}">
                         <label for="form-adoption3" class="form-label form-check-label">Undecided</label>
                     </div>
                 </div>
@@ -75,7 +74,6 @@
                 <button type="submit" class="btn">Submit</button>
             </div>
 
-
         </form>
     </div>
 
@@ -83,16 +81,17 @@
 
     <div class="rsvp-cat-info">
         <div class="image-container">
-            <img src="../../../pub/assets/imgs/cats/tink-img.png" alt="" class="cat-image">
+            <img src=${eventDetails.cat_image_url} alt="" class="cat-image">
         </div>
         <div class="text-container" id="cat-name-container">
             <div class="rsvp-cat-name">
-                [Insert featured cat name here]
+                ${eventDetails.name}
             </div>
         </div>
         <div class="text-container">
             <div class="rsvp-date">
-                [Insert date and time here]
+                Start: ${eventDetails.start_date} <br>
+                End: ${eventDetails.end_date}
             </div>
         </div>
     </div>

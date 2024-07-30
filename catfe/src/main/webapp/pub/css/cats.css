@@ -6,7 +6,7 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   flex-direction: row;
-  background-color: rgb(186, 186, 186);
+  background-color: rgb(156, 99, 127);
   width: 100%;
   height: auto;
   min-height: 100px;
@@ -22,11 +22,11 @@
 }
 .cats-container .cat-container .image-container {
   overflow: hidden;
-  background-color: rgb(200, 200, 200);
   width: 80%;
   height: auto;
   aspect-ratio: 1/1;
   border-radius: 100%;
+  border: 10px solid rgb(245, 235, 227);
 }
 .cats-container .cat-container .image-container .cat-image {
   object-fit: cover;

@@ -17,7 +17,7 @@
 }
 
 .event-object-container {
-  background: rgb(215, 215, 215);
+  background: rgba(131, 73, 101, 0.5);
   display: flex;
   height: auto;
   width: 90%;
@@ -33,17 +33,18 @@
   margin-right: 0.5rem;
   height: 290px;
   width: auto;
+  max-width: 274px;
   border-radius: 0.7rem;
 }
 .event-object-container .image-container .event-image {
-  object-fit: contain;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
 .event-object-container .text-container {
   display: flex;
   flex-direction: column;
-  background: rgb(244, 244, 244);
+  background: rgb(245, 235, 227);
   height: auto;
   border-radius: 1rem;
   padding: 1rem;
@@ -55,8 +56,7 @@
   font-family: "Blogger Sans";
   font-weight: 500;
   letter-spacing: 1px;
-  width: 60%;
-  height: 2.5rem;
+  height: auto;
   margin: 0.6rem;
   margin-left: 0;
 }
@@ -107,7 +107,7 @@
   flex-grow: 0.5;
   width: 100px;
   height: auto;
-  background: rgb(156, 156, 156);
+  background: rgba(131, 73, 101, 0.5);
   border-radius: 0.7rem;
 }
 .rsvp-container .rsvp-event-info .image-container {
@@ -125,7 +125,7 @@
 .rsvp-container .rsvp-event-info .text-container {
   display: flex;
   flex-direction: row;
-  background: rgb(244, 244, 244);
+  background: rgb(245, 235, 227);
   height: auto;
   width: 100%;
   border-radius: 1rem;
@@ -142,8 +142,9 @@
   flex-grow: 1.1;
   width: 100px;
   height: auto;
-  background: rgb(215, 215, 215);
+  background: rgb(245, 235, 227);
   border-radius: 0.7rem;
+  border: 8px solid rgba(131, 73, 101, 0.5);
 }
 .rsvp-container .rsvp-form-container .rsvp-title-container {
   text-align: center;
@@ -177,6 +178,7 @@
 }
 .rsvp-container .rsvp-form-container #event-form .submit .btn {
   margin-top: 2rem;
+  margin-bottom: 2rem;
   background-color: rgb(216, 67, 67);
   color: rgb(243, 242, 232);
 }
@@ -188,7 +190,7 @@
   flex-grow: 0.5;
   width: 100px;
   height: auto;
-  background: rgb(156, 156, 156);
+  background: rgba(131, 73, 101, 0.5);
   border-radius: 0.7rem;
 }
 .rsvp-container .rsvp-cat-info .image-container {
@@ -206,7 +208,7 @@
 .rsvp-container .rsvp-cat-info .text-container {
   display: flex;
   flex-direction: column;
-  background: rgb(244, 244, 244);
+  background: rgb(245, 235, 227);
   height: auto;
   width: 100%;
   border-radius: 1rem;
@@ -222,6 +224,12 @@
 .rsvp-container .rsvp-cat-info .text-container .rsvp-date {
   font-size: 2rem;
   color: rgb(216, 67, 67);
+}
+.rsvp-container .rsvp-cat-info .text-container .rsvp-cat-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  top: -4px;
 }
 .rsvp-container .rsvp-cat-info #cat-name-container {
   max-height: 4rem;
@@ -245,6 +253,7 @@
   .event-object-container .image-container {
     margin: 15px;
     height: 80px;
+    max-width: 900px;
     width: 90%;
     border-radius: 0.7rem;
   }

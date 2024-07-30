@@ -6,59 +6,18 @@
 </section>
 
 <section class="container cats-container">
-    <div class="cat-container">
-        <div class="image-container">
-            <img src="../../../pub/assets/imgs/cats/tink-img.png" alt="" class = "cat-image">
+    <c:forEach items="${cats}" var = "cat">
+        <div class="cat-container">
+            <div class="image-container">
+                <img src=${cat.imageURL} alt="" class = "cat-image">
+            </div>
+            <div class="text-container">
+                <h2>${cat.name}</h2>
+            </div>
         </div>
-        <div class="text-container">
-            <h2>[Cat Name Here]</h2>
-        </div>
-    </div>
+    </c:forEach>
 
-    <div class="cat-container">
-        <div class="image-container">
-            <img src="../../../pub/assets/imgs/cats/tink-img.png" alt="" class = "cat-image">
-        </div>
-        <div class="text-container">
-            <h2>[Cat Name Here]</h2>
-        </div>
-    </div>
 
-    <div class="cat-container">
-        <div class="image-container">
-            <img src="../../../pub/assets/imgs/cats/tink-img.png" alt="" class = "cat-image">
-        </div>
-        <div class="text-container">
-            <h2>[Cat Name Here]</h2>
-        </div>
-    </div>
-
-    <div class="cat-container">
-        <div class="image-container">
-            <img src="../../../pub/assets/imgs/cats/tink-img.png" alt="" class = "cat-image">
-        </div>
-        <div class="text-container">
-            <h2>[Cat Name Here]</h2>
-        </div>
-    </div>
-
-    <div class="cat-container">
-        <div class="image-container">
-            <img src="../../../pub/assets/imgs/cats/tink-img.png" alt="" class = "cat-image">
-        </div>
-        <div class="text-container">
-            <h2>[Cat Name Here]</h2>
-        </div>
-    </div>
-
-    <div class="cat-container">
-        <div class="image-container">
-            <img src="../../../pub/assets/imgs/cats/tink-img.png" alt="" class = "cat-image">
-        </div>
-        <div class="text-container">
-            <h2>[Cat Name Here]</h2>
-        </div>
-    </div>
 </section>
 
 

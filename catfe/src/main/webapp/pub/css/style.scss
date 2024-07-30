@@ -1,6 +1,7 @@
 // GENERAL
 
-$bg-clr: #e2e6e9;
+$bg-clr: #e7ecf5;
+$container-clr: #f1c7d5;
 $action-btn: #dfb9c1;
 $txt-fade-clr: #817578;
 $txt-clr-hvr: #12aebc;
@@ -10,6 +11,11 @@ $logo-cream: #ffddc9;
 
 $txt-clr: #201e1c;
 
+// $header-bg-clr: #e7eeee;
+$header-bg-clr: radial-gradient(circle, rgba(240,233,246,1) 0%, rgba(221,206,242,1) 52%, rgba(209,209,240,1) 100%);
+body {
+    background-color: $bg-clr;
+}
 .title { 
     color: $txt-clr;
     font-family: 'Vintage One', serif;
@@ -29,5 +35,5 @@ $txt-clr: #201e1c;
 }
 
 .header {
-    background-color:#e7eeee;
+    background: $header-bg-clr;
 }
