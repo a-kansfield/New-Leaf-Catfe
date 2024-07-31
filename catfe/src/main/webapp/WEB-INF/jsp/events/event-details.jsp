@@ -28,17 +28,17 @@
         <form id="event-form" action="/events/${id}" method="post">
             <div id="form-first-name-container form-group">
                 <label for="form-first-name" class="form-label">First Name</label>
-                <input id="form-first-name" class="form-control" type="text" value="${form.firstName}">
+                <input id="form-first-name" name="firstname" class="form-control" type="text" value="${form.firstName}">
             </div>
 
             <div id="form-last-name-container form-group">
                 <label for="form-last-name" class="form-label">Last Name</label>
-                <input id="form-last-name"  class="form-control" type="text" value="${form.lastName}">
+                <input id="form-last-name"  name="lastname" class="form-control" type="text" value="${form.lastName}">
             </div>
 
             <div id="form-email-container form-group">
                 <label for="form-email" class="form-label">Email</label>
-                <input id="form-email"  class="form-control" type="text" value="${form.email}">
+                <input id="form-email"  name="email" class="form-control" type="text" value="${form.email}">
             </div>
 
             <div id="form-adoption-container">

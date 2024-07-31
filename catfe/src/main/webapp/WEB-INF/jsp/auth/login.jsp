@@ -11,11 +11,11 @@
         <form action="/account/login" id="login-form">
             <div class="form-group">
                 <label for="email" class="form-label">Email</label>
-                <input type="text" id="email" class="form-control">
+                <input type="text" name="email" id="email" class="form-control">
             </div>
             <div class="form-group">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" id="password" class="form-control">
+                <input type="password" name="password" id="password" class="form-control">
             </div>
 
 
