@@ -17,7 +17,7 @@
 }
 
 .event-object-container {
-  background: rgba(131, 73, 101, 0.5);
+  background: rgb(102, 69, 90);
   display: flex;
   height: auto;
   width: 90%;
@@ -44,7 +44,7 @@
 .event-object-container .text-container {
   display: flex;
   flex-direction: column;
-  background: rgb(245, 235, 227);
+  background: rgb(237, 242, 247);
   height: auto;
   border-radius: 1rem;
   padding: 1rem;
@@ -90,6 +90,29 @@
   height: 2.5rem;
 }
 
+.info-txt {
+  height: auto;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-container .rsvp-date {
+  padding: 1rem;
+  padding-top: 1.2rem;
+  height: auto;
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(216, 67, 67);
+}
+.text-container .rsvp-date #time {
+  font-size: 1.5rem;
+}
+
 .rsvp-container {
   font-family: "Blogger Sans", "Comfortaa", Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 5rem;
@@ -107,7 +130,7 @@
   flex-grow: 0.5;
   width: 100px;
   height: auto;
-  background: rgba(131, 73, 101, 0.5);
+  background: rgb(102, 69, 90);
   border-radius: 0.7rem;
 }
 .rsvp-container .rsvp-event-info .image-container {
@@ -125,7 +148,7 @@
 .rsvp-container .rsvp-event-info .text-container {
   display: flex;
   flex-direction: row;
-  background: rgb(245, 235, 227);
+  background: rgb(237, 242, 247);
   height: auto;
   width: 100%;
   border-radius: 1rem;
@@ -142,9 +165,9 @@
   flex-grow: 1.1;
   width: 100px;
   height: auto;
-  background: rgb(245, 235, 227);
+  background: rgb(237, 242, 247);
   border-radius: 0.7rem;
-  border: 8px solid rgba(131, 73, 101, 0.5);
+  border: 8px solid rgb(102, 69, 90);
 }
 .rsvp-container .rsvp-form-container .rsvp-title-container {
   text-align: center;
@@ -190,7 +213,7 @@
   flex-grow: 0.5;
   width: 100px;
   height: auto;
-  background: rgba(131, 73, 101, 0.5);
+  background: rgb(102, 69, 90);
   border-radius: 0.7rem;
 }
 .rsvp-container .rsvp-cat-info .image-container {
@@ -208,7 +231,7 @@
 .rsvp-container .rsvp-cat-info .text-container {
   display: flex;
   flex-direction: column;
-  background: rgb(245, 235, 227);
+  background: rgb(237, 242, 247);
   height: auto;
   width: 100%;
   border-radius: 1rem;
@@ -225,6 +248,9 @@
   font-size: 2rem;
   color: rgb(216, 67, 67);
 }
+.rsvp-container .rsvp-cat-info .text-container .rsvp-date #time {
+  font-size: 1.5rem;
+}
 .rsvp-container .rsvp-cat-info .text-container .rsvp-cat-name {
   font-size: 1.5rem;
   font-weight: bold;
@@ -233,6 +259,13 @@
 }
 .rsvp-container .rsvp-cat-info #cat-name-container {
   max-height: 4rem;
+}
+.rsvp-container .rsvp-cat-info .spotlight-container {
+  max-height: 5rem;
+}
+.rsvp-container .rsvp-cat-info #spotlight-title {
+  letter-spacing: 2px;
+  font-size: 2rem;
 }
 
 @media (width <= 768px) {

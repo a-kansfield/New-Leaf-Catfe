@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,6 +82,7 @@
                     src="/pub/assets/logo/SVG/new-leaf-logo.svg" alt="" />
         </a>
         <ul class="navbar-nav">
+            <sec:authorize access="hasAuthority('ADMIN')">
             <li class="nav-item">
                 <div class="dropdown">
                     <button class="btn dropdown-toggle" type="button" id="admin-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -92,11 +94,13 @@
                     </div>
                 </div>
             </li>
+            </sec:authorize>
             <li class="nav-item">
                 <a href="../events/" class="nav-link">
                     Events
                 </a>
             </li>
+
 <%--            <li class="nav-item">--%>
 <%--                <a href="../home/index.html" class="nav-link">--%>
 <%--                    Schedule--%>
@@ -111,19 +115,35 @@
 
             <li class="nav-item login-container">
                 <ul class="navbar-nav">
-                    <li class="nav-item" id= "login-btn">
-                        <a href="../account/login" class="nav-link" id="login-link">
-                            Login
-                        </a>
-                    </li>
+                    <sec:authorize access="!isAuthenticated()">
+                        <li class="nav-item" id= "login-btn">
+                            <a href="../account/login" class="nav-link" id="login-link">
+                                Login
+                            </a>
+                        </li>
+                    </sec:authorize>
+                    <sec:authorize access="isAuthenticated()">
+                        <li class="nav-item" id="login-btn">
+                            <a href="../account/logout" class="nav-link">
+                                Logout
+                            </a>
+                        </li>
+                    </sec:authorize>
                     <li class="nav-item">
                         <div class="login-divider"></div>
                     </li>
+                    <sec:authorize access="!isAuthenticated()">
                     <li class="nav-item" id="sign-up-btn">
                         <a href="../account/sign-up" class="nav-link" id="sign-up-link">
                             Sign Up
                         </a>
                     </li>
+                    </sec:authorize>
+                    <sec:authorize access="isAuthenticated()">
+                        <li class="nav-item" id="username_email" >
+                            <sec:authentication property="name"/>
+                        </li>
+                    </sec:authorize>
                 </ul>
             </li>
 

@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="../include/header.jsp"/>
 <section class="header">
     <h1 class="title">Event Sign Up</h1>
@@ -6,18 +7,23 @@
 </section>
 
 <section class=" container rsvp-container">
+
+
     <div class="rsvp-event-info">
         <div class="image-container">
             <img class="event-image" src=${eventDetails.image_url} alt="">
         </div>
+        <div class="text-container ">
+            <div class="rsvp-date">
+                <fmt:formatDate value="${event.startDate}" pattern="MMMM dd" /> <br>
+                <div id="time"><fmt:formatDate value="${event.startDate}" pattern="h:mm a" /> - <fmt:formatDate value="${event.endDate}" pattern="h:mm a" /></div>
+            </div>
+        </div>
         <div class="text-container">
             <div class="rsvp-event-info-txt">
                ${eventDetails.description}
-
-
             </div>
         </div>
-
     </div>
 
     <div class="rsvp-form-container">
@@ -77,24 +83,27 @@
         </form>
     </div>
 
-
-
+    <%--Cat Panel--%>
     <div class="rsvp-cat-info">
         <div class="image-container">
             <img src=${eventDetails.cat_image_url} alt="" class="cat-image">
+        </div>
+        <div class="text-container spotlight-container">
+            <div class="rsvp-cat-name" id="spotlight-title">Kitty Spotlight</div>
         </div>
         <div class="text-container" id="cat-name-container">
             <div class="rsvp-cat-name">
                 ${eventDetails.name}
             </div>
         </div>
-        <div class="text-container">
-            <div class="rsvp-date">
-                Start: ${eventDetails.start_date} <br>
-                End: ${eventDetails.end_date}
+        <div class="text-container ">
+            <div class="info-txt">
+                ${eventDetails.cat_description}
             </div>
         </div>
     </div>
+
+
 </section>
 
 <jsp:include page="../include/footer.jsp"/>

@@ -4,8 +4,8 @@
 
 
 
-$container-clr: rgb(131, 73, 101, 0.5);
-$text-bg: rgb(245, 235, 227);
+$container-clr: rgb(102, 69, 90);
+$text-bg: rgb(237, 242, 247);
 $action-clr: rgb(216, 67, 67);
 $action-txt: rgb(243, 242, 232);
 $spacing: 1.5rem;
@@ -133,7 +133,29 @@ $spacing: 1.5rem;
 /////////////////////////////////////////////////////////////
 ///////////////////////// Event Form ////////////////////////
 /////////////////////////////////////////////////////////////
+.info-txt {
+    height: auto;
+    width: 100%;
+    padding: 1.5rem;
+}
 
+.text-container{
+display: flex;
+justify-content: center;
+align-items: center;
+    .rsvp-date {
+        padding: 1rem;
+        padding-top: 1.2rem;
+        height: auto;
+        text-align: center;
+        font-size: 2rem;
+        color: $action-clr;
+        #time {
+            font-size: 1.5rem;
+        }
+    }
+    
+}
 .rsvp-container {
     font-family: 'Blogger Sans', 'Comfortaa', Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 5rem;
@@ -184,11 +206,12 @@ $spacing: 1.5rem;
             flex: 1;
             margin-top: 1rem;
             padding: 1rem;
-
+            
             .rsvp-event-info-txt {
                 height: auto;
                 width: 100%;
             }
+            
         }
     }
     .rsvp-form-container {
@@ -269,6 +292,7 @@ $spacing: 1.5rem;
                 height: 100%;
             }
         }
+        
         .text-container {
 
             display: flex;
@@ -290,6 +314,9 @@ $spacing: 1.5rem;
             .rsvp-date {
                 font-size: 2rem;
                 color: $action-clr;
+                #time {
+                    font-size: 1.5rem;
+                }
             }
             .rsvp-cat-name {
                 font-size: 1.5rem;
@@ -301,6 +328,13 @@ $spacing: 1.5rem;
         #cat-name-container{
             max-height: 4rem;
         } 
+        .spotlight-container {
+            max-height: 5rem;
+        }
+        #spotlight-title{
+            letter-spacing: 2px;
+            font-size: 2rem;
+        }
     }
 }
 

@@ -8,7 +8,7 @@
 
 <section class="container login-form-container">
     <div class="form-container">
-        <form action="/account/login" id="login-form">
+        <form action="/account/login" id="login-form" method="post">
             <div class="form-group">
                 <label for="email" class="form-label">Email</label>
                 <input type="text" name="username" id="email" class="form-control">

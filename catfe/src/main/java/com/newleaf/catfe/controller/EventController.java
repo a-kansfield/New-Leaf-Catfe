@@ -5,17 +5,18 @@ import com.newleaf.catfe.database.dao.EventDAO;
 
 import com.newleaf.catfe.database.entity.Event;
 import com.newleaf.catfe.form.EventSignUpFormBean;
-import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
 
@@ -36,6 +37,10 @@ public class EventController {
         List<Event> events = eventDAO.findAll();
         response.addObject("events", events);
 
+        String datePattern = "MMMM dd";
+        DateFormat dateFormat = new SimpleDateFormat(datePattern);
+        response.addObject(datePattern);
+
         return response;
     }
 
@@ -48,8 +53,9 @@ public class EventController {
         Event event = eventDAO.findById(id);
         response.addObject("event", event);
         Map<String,Object> eventDetails = eventDAO.getEventDetails(id);
-        log.debug(eventDetails.toString());
         response.addObject("eventDetails", eventDetails);
+
+
 
         EventSignUpFormBean form = new EventSignUpFormBean();
         response.addObject("form", form);
@@ -70,3 +76,5 @@ public class EventController {
 
     }
 }
+
+//Noodle was here

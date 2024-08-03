@@ -1,3 +1,7 @@
+#username_email {
+  padding: 8px;
+}
+
 #logo {
   min-width: 64px;
   padding: 0;
@@ -118,6 +122,4 @@
     transform: translateX(115vw) skew(-15deg);
     transition: 0.9s ease-in-out;
   }
-}
-
-/*# sourceMappingURL=nav.css.map */
+}/*# sourceMappingURL=nav.css.map */

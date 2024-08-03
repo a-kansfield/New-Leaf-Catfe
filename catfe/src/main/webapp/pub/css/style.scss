@@ -12,7 +12,7 @@ $logo-cream: #ffddc9;
 $txt-clr: #201e1c;
 
 // $header-bg-clr: #e7eeee;
-$header-bg-clr: radial-gradient(circle, rgba(240,233,246,1) 0%, rgba(221,206,242,1) 52%, rgba(209,209,240,1) 100%);
+$header-bg-clr: radial-gradient(circle, rgba(240,233,246,.4) 0%, rgba(221,206,242,.4) 52%, rgba(209,209,240,.4) 100%);
 body {
     background-color: $bg-clr;
 }

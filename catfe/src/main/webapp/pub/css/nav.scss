@@ -7,6 +7,10 @@ $txt-clr-hvr: #12aebc;
 $logo-blue: #3b9696;
 $logo-cream: #ffddc9;
 
+#username_email {
+    padding: 8px;
+}
+
 #logo {
     min-width: 64px;
     padding: 0;
@@ -76,6 +80,7 @@ $logo-cream: #ffddc9;
     border: none;
     font-size: 1.35rem;
 }
+
 .login-container {
     display: flex;
     flex-wrap: nowrap;
@@ -92,11 +97,13 @@ $logo-cream: #ffddc9;
     .nav-link {
         color: $logo-cream;
         font-size: 1rem;
+
         &:hover {
             color: #fcf8ec;
             transform: scale(1.1);
             transition: transform .8s;
         }
+
     }
 
     .login-divider{
@@ -108,6 +115,8 @@ $logo-cream: #ffddc9;
         border-right: 1px solid #50b1b1;
         border-left:1px solid #308383;
     }
+
+
 }
 
 #custom-logo-positioning {
