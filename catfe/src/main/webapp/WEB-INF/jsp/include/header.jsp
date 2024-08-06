@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="/pub/css/cats.css">
     <link rel="stylesheet" href="/pub/css/account.css">
     <link rel="stylesheet" href="/pub/css/table.css">
-
+    <link rel="stylesheet" href="/pub/css/form.css">
 
     <!------- Fonts ------->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,14 +89,14 @@
                         Admin
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a href="../admin/cats" class="dropdown-item">Cats</a>
-                        <a href="../admin/events" class="dropdown-item">Events</a>
+                        <a href="/admin/cats" class="dropdown-item">Cats</a>
+                        <a href="/admin/events" class="dropdown-item">Events</a>
                     </div>
                 </div>
             </li>
             </sec:authorize>
             <li class="nav-item">
-                <a href="../events/" class="nav-link">
+                <a href="/events/" class="nav-link">
                     Events
                 </a>
             </li>
@@ -107,7 +107,7 @@
 <%--                </a>--%>
 <%--            </li>--%>
             <li class="nav-item">
-                <a href="../about" class="nav-link">
+                <a href="/about" class="nav-link">
                     About
                 </a>
             </li>
@@ -117,14 +117,14 @@
                 <ul class="navbar-nav">
                     <sec:authorize access="!isAuthenticated()">
                         <li class="nav-item" id= "login-btn">
-                            <a href="../account/login" class="nav-link" id="login-link">
+                            <a href="/account/login" class="nav-link" id="login-link">
                                 Login
                             </a>
                         </li>
                     </sec:authorize>
                     <sec:authorize access="isAuthenticated()">
                         <li class="nav-item" id="login-btn">
-                            <a href="../account/logout" class="nav-link">
+                            <a href="/account/logout" class="nav-link">
                                 Logout
                             </a>
                         </li>
@@ -134,7 +134,7 @@
                     </li>
                     <sec:authorize access="!isAuthenticated()">
                     <li class="nav-item" id="sign-up-btn">
-                        <a href="../account/sign-up" class="nav-link" id="sign-up-link">
+                        <a href="/account/sign-up" class="nav-link" id="sign-up-link">
                             Sign Up
                         </a>
                     </li>

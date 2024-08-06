@@ -1,0 +1,33 @@
+$action-clr: rgb(216, 67, 67);
+$action-txt: rgb(243, 242, 232);
+
+form {
+    
+    font-family:'Blogger Sans';
+    letter-spacing: 1px;
+}
+.row {
+    margin: 2rem;
+}
+.form-check {
+    display: flex;
+    justify-content: flex-end;
+    input {
+        margin-right: .6rem;
+    }
+}
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit-btn {
+    background-color: $action-clr;
+    color: $action-txt;
+    align-self: flex-end;
+    min-width: 200px;
+    &:hover {
+        background-color: lighten($action-clr, 10%);
+        color: lighten($action-txt, 10%);
+    }
+}

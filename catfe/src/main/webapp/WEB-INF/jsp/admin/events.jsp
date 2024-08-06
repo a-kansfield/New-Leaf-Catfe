@@ -6,13 +6,13 @@
     <div class="title-hr"></div>
 </section>
 <section class="container">
-    <table>
+    <table class="table table-striped">
         <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Capacity</th>
-            <th scope="col">Description</th>
+            <th scope="col" class="description-column">Description</th>
             <th scope="col">Start</th>
             <th scope="col">End</th>
             <th scope="col">Edit</th>
@@ -22,14 +22,14 @@
         <c:forEach items="${events}" var="event">
             <tr>
                 <td>
-                    <div class="center"><p>${event.id}</p></div>
+                    <div class="center" scope="row"><p>${event.id}</p></div>
                 </td>
                 <td>${event.title}</td>
                 <td>${event.capacity}</td>
-                <td class="description-column">${event.description}</td>
+                <td class="description-row">${event.description}</td>
                 <td>${event.startDate}</td>
                 <td>${event.endDate}</td>
-                <td>Edit</td>
+                <td><a href="../admin/events/new">Edit</a></td>
             </tr>
         </c:forEach>
         </tbody>

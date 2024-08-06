@@ -2,14 +2,8 @@ table {
   border: 2px solid rgba(73, 73, 73, 0.405);
   font-family: "Blogger Sans";
   letter-spacing: 1px;
-  margin: 5rem;
+  margin-top: 5rem;
   text-align: center;
-}
-table th {
-  padding: 0.5rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  font-size: 1.1rem;
 }
 table .center {
   display: flex;
@@ -40,9 +34,14 @@ table thead th:nth-child(7) {
   width: 5%;
 }
 table .description-column {
+  max-width: 10rem;
+}
+table .description-row {
   text-align: left;
-  position: relative;
-  top: -12px;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 table td {
   border-bottom: 1px solid rgba(72, 72, 72, 0.5);
@@ -62,4 +61,6 @@ table tbody tr:nth-child(even) {
 }
 table table {
   background-color: #ff33cc;
-}/*# sourceMappingURL=table.css.map */
+}
+
+/*# sourceMappingURL=table.css.map */

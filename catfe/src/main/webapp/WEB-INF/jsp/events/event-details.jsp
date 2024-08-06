@@ -8,7 +8,6 @@
 
 <section class=" container rsvp-container">
 
-
     <div class="rsvp-event-info">
         <div class="image-container">
             <img class="event-image" src=${eventDetails.image_url} alt="">
@@ -67,7 +66,7 @@
                 </div>
             </div>
 
-            <c:if test="${3 == 3}"> <%-- Test will later check to see if the event in the db is a 21+ event--%>
+            <c:if test="${30 == 3}"> <%-- Test will later check to see if the event in the db is a 21+ event--%>
                 <div id="alcohol-event" class="hidden">
                     <div id="alcohol-notice" class="form-text">Note: This event serves alcohol.</div>
                     <div class="alcohol-notice-check">

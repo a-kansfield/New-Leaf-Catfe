@@ -1,0 +1,35 @@
+form {
+  font-family: "Blogger Sans";
+  letter-spacing: 1px;
+}
+
+.row {
+  margin: 2rem;
+}
+
+.form-check {
+  display: flex;
+  justify-content: flex-end;
+}
+.form-check input {
+  margin-right: 0.6rem;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-btn {
+  background-color: rgb(216, 67, 67);
+  color: rgb(243, 242, 232);
+  align-self: flex-end;
+  min-width: 200px;
+}
+.submit-btn:hover {
+  background-color: #e16d6d;
+  color: white;
+}
+
+/*# sourceMappingURL=form.css.map */
