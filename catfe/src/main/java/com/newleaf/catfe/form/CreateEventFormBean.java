@@ -26,8 +26,9 @@ public class CreateEventFormBean {
 //    capacity int
     private Integer capacity;
 //    serves_alcohol tinyint(1)
-    private Boolean servesAlcohol;
+    private String servesAlcohol;
 //    image_url varchar(70)
+
     private String imageURL;
 //    featured_cat int
     private Integer featuredCat;

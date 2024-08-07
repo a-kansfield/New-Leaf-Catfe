@@ -76,7 +76,7 @@
 
         <div class="row">
             <div class="form-check">
-                <input type="checkbox" id="servesAlcohol" name="servesAlcohol" value="true" class="form-check-input">
+                <input type="checkbox" id="servesAlcohol" name="servesAlcohol" value="servesAlcohol" <c:if test="${form.servesAlcohol != null}">checked</c:if> class="form-check-input">
                 <label for="servesAlcohol" class="form-check-label">Serves Alcohol</label>
             </div>
         </div>

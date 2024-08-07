@@ -71,7 +71,7 @@ public class AdminController {
 //        Date startDate = eventService.convertDate(form.getStartDate());
 //        log.debug(startDate.toString());
 //        log.debug(form.getServesAlcohol().toString());
-
+        response.addObject("form", form);
         return response;
     }
 

@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface CatDAO extends JpaRepository<Cat, Long> {
 
+
     Cat findById(Integer id);
 
 }

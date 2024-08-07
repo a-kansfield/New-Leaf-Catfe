@@ -10,7 +10,8 @@ import java.util.Map;
 public interface EventDAO extends JpaRepository<Event, Long> {
     Event findById(Integer id);
 
-    List<Event> findByServesAlcohol(boolean bool);
+//    @Query(findByServes)
+//    List<Event> findByServesAlcohol(boolean bool);
 
     @Query(value="SELECT e.*, c.name, c.description AS cat_description, c.image_url AS cat_image_url"
             +   " FROM events e "
