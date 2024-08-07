@@ -52,7 +52,13 @@
             <div class="col-4">
                 <div class="form-group">
                     <label for="imageURL">Image URL</label>
-                    <input type="text" id="imageURL" name="imageURL" value="${form.imageURL}" class="form-control">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">../../../pub/assets/imgs/events/</span>
+                        </div>
+                        <input type="text" id="imageURL" name="imageURL" value="${form.imageURL}" class="form-control">
+                    </div>
+
                 </div>
             </div>
             <div class="col-4">

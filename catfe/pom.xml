@@ -135,7 +135,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!--		Needed to run validation. Cannot do this until I get internet again.-->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>

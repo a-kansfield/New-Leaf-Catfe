@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -52,4 +53,9 @@ public class Event {
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
         @JoinColumn(name = "featured_cat", nullable = true)
     private Cat cat;
+
+    @ToString.Exclude
+    @OneToMany(mappedBy = "event", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private List<EventUser> eventUsers;
 }

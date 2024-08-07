@@ -5,7 +5,9 @@
     <h1 class="title">Events</h1>
     <div class="title-hr"></div>
 </section>
+
 <section class="container">
+    <div><a href="../admin/events/new">+</a></div>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -29,7 +31,7 @@
                 <td class="description-row">${event.description}</td>
                 <td>${event.startDate}</td>
                 <td>${event.endDate}</td>
-                <td><a href="../admin/events/new">Edit</a></td>
+                <td><a href="../admin/events/${event.id}/edit">Edit</a></td>
             </tr>
         </c:forEach>
         </tbody>

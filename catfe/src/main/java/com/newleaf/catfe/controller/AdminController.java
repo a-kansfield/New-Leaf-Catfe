@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -54,7 +53,7 @@ public class AdminController {
 
     @GetMapping("/events/new")
     public ModelAndView newEvent() {
-        ModelAndView response = new ModelAndView("admin/new-event");
+        ModelAndView response = new ModelAndView("create-event");
         List<Cat> cats = catDAO.findAll();
         response.addObject("cats", cats);
 
@@ -62,16 +61,29 @@ public class AdminController {
     }
     @PostMapping("/events/new")
     public ModelAndView newEventSubmit(CreateEventFormBean form) {
-        ModelAndView response = new ModelAndView("admin/new-event");
-//        log.debug(form.getTitle());
-//        log.debug(form.getCapacity().toString());
-//        log.debug(form.getDescription());
-        log.debug(form.getStartDate().toString());
-        log.debug(form.getEndDate().toString());
-//        Date startDate = eventService.convertDate(form.getStartDate());
-//        log.debug(startDate.toString());
-//        log.debug(form.getServesAlcohol().toString());
+        ModelAndView response = new ModelAndView("create-event");
         response.addObject("form", form);
+        String url = "../../../pub/assets/imgs/events/" + form.getImageURL();
+        Event event = new Event();
+        event.setTitle(form.getTitle());
+        event.setStartDate(form.getStartDate());
+        event.setEndDate(form.getEndDate());
+        event.setDescription(form.getDescription());
+        event.setCapacity(form.getCapacity());
+        event.setImageURL(url);
+        Cat cat = catDAO.findById(form.getFeaturedCat());
+        event.setCat(cat);
+        event.setFeaturedCat(cat.getId());
+
+        if (form.getServesAlcohol() != null) {
+            event.setServesAlcohol(true);
+        } else {
+            event.setServesAlcohol(false);
+        }
+
+        log.debug(event.toString());
+
+        event = eventDAO.save(event);
         return response;
     }
 
