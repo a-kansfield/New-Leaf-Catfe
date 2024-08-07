@@ -1,5 +1,5 @@
-$container-clr: rgb(156, 99, 127);
-$text-bg: rgb(245, 235, 227);
+$container-clr: rgb(102, 69, 90);
+$text-bg: rgb(237, 242, 247);
 .cats-container {
     margin-top: 3rem;
     border-radius: .7rem;
@@ -46,7 +46,7 @@ $text-bg: rgb(245, 235, 227);
             padding-bottom: 2rem;
             margin: 1rem;
             text-align: center;
-            background-color: rgb(216, 216, 216);
+            background-color: $text-bg;
             width: 100%;
             height: auto;
             border-radius: .7rem;
@@ -55,3 +55,57 @@ $text-bg: rgb(245, 235, 227);
         
     }
 }
+
+// Individual Cat Page
+
+.cat-card {
+    display: flex;
+    flex-direction: row;
+    font-size: 2rem;
+    font-family: 'Blogger Sans', 'Comfortaa', 'Verdana', sans-serif;
+    text-align: center;
+    .container-1, .container-2, .container-3 {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        background-color: $text-bg;
+        border-radius: 0.7rem;
+        border: 1.4rem $container-clr solid;
+    }
+    .container-1 {
+        width: auto;
+        padding-right: 20px;
+        height: 450px;
+    }
+
+    .container-2 {
+        padding: 3rem;
+        width: 450px;
+        height: 450px;
+
+    }
+    .container-3 {
+        
+        width: 450px;
+        height: 450px;
+        text-align: left;
+        font-size: 1.3rem;
+        padding: 1.4rem;
+        line-height: 1.8rem;
+        .container-title {
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+}
+
+.container-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+

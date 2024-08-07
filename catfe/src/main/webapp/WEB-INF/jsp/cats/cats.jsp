@@ -8,8 +8,8 @@
 <section class="container cats-container">
     <c:forEach items="${cats}" var = "cat">
         <div class="cat-container">
-            <div class="image-container">
-                <img src=${cat.imageURL} alt="" class = "cat-image">
+            <div class="image-container circle-grow">
+                <a href="/cats/${cat.id}"><img src=${cat.imageURL} alt="" class = "cat-image"></a>
             </div>
             <div class="text-container">
                 <h2>${cat.name}</h2>

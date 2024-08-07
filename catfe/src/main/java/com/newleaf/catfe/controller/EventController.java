@@ -76,5 +76,3 @@ public class EventController {
 
     }
 }
-
-//Noodle was here

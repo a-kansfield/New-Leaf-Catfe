@@ -11,6 +11,7 @@ $logo-cream: #ffddc9;
 
 $txt-clr: #201e1c;
 
+$spacing: 1.5rem;
 // $header-bg-clr: #e7eeee;
 $header-bg-clr: radial-gradient(circle, rgba(240,233,246,.4) 0%, rgba(221,206,242,.4) 52%, rgba(209,209,240,.4) 100%);
 body {
@@ -36,4 +37,49 @@ body {
 
 .header {
     background: $header-bg-clr;
+}
+
+.circle-grow {
+    flex-shrink: 0;
+    z-index:2;
+    border: rgb(82, 82, 82) 1rem solid;
+    border-radius: 90%;
+    background-color: rgb(136, 136, 136);
+
+    &:hover {
+        transform: scale(1.15);
+    }
+    transition: cubic-bezier(.37,-0.02,.17,.88), 1s;
+}
+
+
+
+a {
+    color:#354a90;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-bottom: 2px solid;
+    &:hover {
+        color: lighten(#354a90, 10%);
+    }
+}
+
+.cat-page-image-container {
+        
+    overflow: hidden;
+    margin: $spacing;
+    margin-right: .5rem;
+    height: 290px;
+    
+    width: auto;
+    max-width: 274px;
+    border-radius: .7rem;
+
+    .event-image, .cat-image {
+
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+
+    }
 }
