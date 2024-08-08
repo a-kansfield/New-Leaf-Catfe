@@ -30,4 +30,10 @@ form {
 .submit-btn:hover {
   background-color: #e16d6d;
   color: white;
-}/*# sourceMappingURL=form.css.map */
+}
+
+.gender-radio {
+  justify-content: flex-start;
+}
+
+/*# sourceMappingURL=form.css.map */

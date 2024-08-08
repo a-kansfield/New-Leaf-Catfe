@@ -30,6 +30,12 @@ public class CatController {
         List<Cat> cats = catDAO.findAll();
         response.addObject("cats", cats);
 
+
+        // Java Stream iteration example
+        cats.stream().forEach(cat -> {
+            log.debug("Cat: " + cat.getName());
+        });
+
         return response;
     }
 

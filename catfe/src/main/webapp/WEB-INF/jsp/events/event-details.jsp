@@ -50,23 +50,23 @@
                 <h3>Are you interested in adopting during this event?</h3>
                 <div class="row form-group">
                     <div class="form-check col">
-                        <input id="form-adoption1"  class="form-check-input" type="radio" name="adoption-interest" value="${form.adoptionInterest}">
+                        <input id="form-adoption1"  class="form-check-input" type="radio" name="adoptionInterest" value="yes">
                         <label for="form-adoption1" class="form-label form-check-label">Yes</label>
 
                     </div>
                     <div class="form-check col">
-                        <input id="form-adoption2"  class="form-check-input" type="radio" name="adoption-interest" value="${form.adoptionInterest}">
+                        <input id="form-adoption2"  class="form-check-input" type="radio" name="adoptionInterest" value="no">
                         <label for="form-adoption2" class="form-label form-check-label">No</label>
 
                     </div>
                     <div class="form-check col">
-                        <input id="form-adoption3"  class="form-check-input" type="radio" name="adoption-interest" value="${form.adoptionInterest}">
+                        <input id="form-adoption3"  class="form-check-input" type="radio" name="adoptionInterest" value="undecided">
                         <label for="form-adoption3" class="form-label form-check-label">Undecided</label>
                     </div>
                 </div>
             </div>
 
-            <c:if test="${30 == 3}"> <%-- Test will later check to see if the event in the db is a 21+ event--%>
+            <c:if test="${event.servesAlcohol}"> <%-- Test will later check to see if the event in the db is a 21+ event--%>
                 <div id="alcohol-event" class="hidden">
                     <div id="alcohol-notice" class="form-text">Note: This event serves alcohol.</div>
                     <div class="alcohol-notice-check">

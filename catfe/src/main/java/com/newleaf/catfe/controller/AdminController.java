@@ -1,15 +1,19 @@
 package com.newleaf.catfe.controller;
 
+import com.newleaf.catfe.database.dao.CatDAO;
+import com.newleaf.catfe.database.dao.EventDAO;
+import com.newleaf.catfe.database.dao.UserDAO;
 import com.newleaf.catfe.database.entity.Cat;
 import com.newleaf.catfe.database.entity.Event;
+import com.newleaf.catfe.form.CreateCatFormBean;
 import com.newleaf.catfe.form.CreateEventFormBean;
 import com.newleaf.catfe.service.EventService;
 import lombok.extern.slf4j.Slf4j;
-import com.newleaf.catfe.database.dao.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,6 +37,10 @@ public class AdminController {
 
     @Autowired
     private EventService eventService;
+
+    private String dir = "../../../pub/assets/imgs/";
+
+    // ######### Cats ######### //
     @GetMapping("/cats")
     public ModelAndView cats() {
         ModelAndView response = new ModelAndView("admin/cats");
@@ -42,6 +50,57 @@ public class AdminController {
         return response;
     }
 
+    @GetMapping("/cats/new")
+    public ModelAndView newCats() {
+        ModelAndView response = new ModelAndView("admin/create-cat");
+        response.addObject("imgURL", dir + "cats/");
+
+        return response;
+    }
+
+    @GetMapping("/cats/{id}/edit")
+    public ModelAndView editCat(@PathVariable Integer id) {
+        ModelAndView response = new ModelAndView("admin/create-cat");
+        Cat cat = catDAO.findById(id);
+        String toRemove = dir +"cats/";
+        String url = eventService.truncateURL(cat.getImageURL(), toRemove);
+        CreateCatFormBean form = new CreateCatFormBean();
+        form.setId(id);
+
+
+        form.setName(cat.getName());
+        form.setAge(cat.getAge());
+        form.setGender(cat.getGender());
+        form.setDescription(cat.getDescription());
+        form.setImageURL(url);
+
+        response.addObject("form", form);
+        return response;
+    }
+    @PostMapping("/cats/new")
+    public ModelAndView catSubmit(CreateCatFormBean form) {
+        ModelAndView response = new ModelAndView("admin/create-cat");
+
+        response.addObject("form", form);
+        String url = dir + "cats/" + form.getImageURL();
+
+        Cat cat = catDAO.findById(form.getId());
+        if (cat == null) {
+            cat = new Cat();
+        }
+        cat.setName(form.getName());
+        cat.setAge(form.getAge());
+        cat.setDescription(form.getDescription());
+        cat.setGender(form.getGender());
+        cat.setImageURL(url);
+        cat.setAdoptionStatus("open");
+
+        cat = catDAO.save(cat);
+
+        return response;
+    }
+
+    // ######### Events ######### //
     @GetMapping("/events")
     public ModelAndView events() {
         ModelAndView response = new ModelAndView("admin/events");
@@ -53,18 +112,22 @@ public class AdminController {
 
     @GetMapping("/events/new")
     public ModelAndView newEvent() {
-        ModelAndView response = new ModelAndView("create-event");
+        ModelAndView response = new ModelAndView("admin/create-event");
         List<Cat> cats = catDAO.findAll();
         response.addObject("cats", cats);
 
         return response;
     }
     @PostMapping("/events/new")
-    public ModelAndView newEventSubmit(CreateEventFormBean form) {
-        ModelAndView response = new ModelAndView("create-event");
+    public ModelAndView eventSubmit(CreateEventFormBean form) {
+        ModelAndView response = new ModelAndView("admin/create-event");
         response.addObject("form", form);
-        String url = "../../../pub/assets/imgs/events/" + form.getImageURL();
-        Event event = new Event();
+        String url = dir + "events/" + form.getImageURL();
+
+        Event event = eventDAO.findById(form.getId());
+        if (event == null) {
+            event = new Event();
+        }
         event.setTitle(form.getTitle());
         event.setStartDate(form.getStartDate());
         event.setEndDate(form.getEndDate());
@@ -88,8 +151,33 @@ public class AdminController {
     }
 
     @GetMapping("/events/{id}/edit")
-    public ModelAndView editEvent() {
-        ModelAndView response = new ModelAndView("admin/edit-event");
+    public ModelAndView editEvent(@PathVariable Integer id) {
+        ModelAndView response = new ModelAndView("admin/create-event");
+        List<Cat> cats = catDAO.findAll();
+        response.addObject("cats", cats);
+        CreateEventFormBean form = new CreateEventFormBean();
+
+
+        Event event = eventDAO.findById(id);
+
+        form.setId(id);
+
+        form.setTitle(event.getTitle());
+        form.setStartDate(event.getStartDate());
+        form.setEndDate(event.getEndDate());
+        form.setDescription(event.getDescription());
+        form.setCapacity(event.getCapacity());
+
+        form.setFeaturedCat(event.getCat().getId());
+        form.setServesAlcohol(eventService.boolToString(event.isServesAlcohol()));
+
+        String toRemove = dir +"events/";
+        String url = eventService.truncateURL(event.getImageURL(), toRemove);
+        form.setImageURL(url);
+
+        response.addObject("form", form);
+        response.addObject("eventCatId", event.getCat().getId());
+
         return response;
     }
 }

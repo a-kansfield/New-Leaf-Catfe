@@ -107,5 +107,11 @@ $text-bg: rgb(237, 242, 247);
     justify-content: space-between;
     padding: 2rem;
 }
-
-
+.radio{
+  display:flex;
+  justify-content: flex-start;
+  
+}
+#description {
+    min-height: 110px;
+}

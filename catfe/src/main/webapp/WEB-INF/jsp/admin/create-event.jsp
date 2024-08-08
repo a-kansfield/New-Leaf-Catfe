@@ -7,13 +7,15 @@
 </section>
 <section class="container">
 
-    <form action="../events/new" method="post">
+    <form action="../../../admin/events/new" method="post">
 
+        <input type="hidden" name="id" value="${form.id}">
         <div class="row">
             <div class="col-12">
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" id="title" name="title" value="${form.title}" placeholder="Event Title" class="form-control">
+                    <input type="text" id="title" name="title" value="${form.title}"
+                           placeholder="Event Title" class="form-control">
                 </div>
             </div>
         </div>
@@ -21,7 +23,9 @@
         <div class="row">
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea id="description" name="description" value="${form.description}" placeholder="Event Description" class="form-control"></textarea>
+                <textarea id="description" name="description"
+                          value="${form.description}"
+                          placeholder="Event Description" class="form-control">${form.description}</textarea>
             </div>
         </div>
 
@@ -65,11 +69,12 @@
 
                 <div class="form-group">
                     <label for="featuredCat">Featured Cat</label>
-                    <select id="featuredCat" name="featuredCat" value="{$featuredCat}" placeholder="Featured Cat" class="form-select">
+                    <select id="featuredCat" name="featuredCat" value="${form.featuredCat}" placeholder="Featured Cat" class="form-select">
+
                         <option disabled selected value>-- Select a Cat --</option>
                         <c:forEach items="${cats}" var="cat">
                             <option value="${cat.id}"
-                                    <c:if test="${cat.id == form.featuredCat} ">
+                                    <c:if test="${cat.id.toString() == eventCatId.toString()} ">
                                         selected="selected"
                                     </c:if>
                             >${cat.name}
@@ -82,7 +87,7 @@
 
         <div class="row">
             <div class="form-check">
-                <input type="checkbox" id="servesAlcohol" name="servesAlcohol" value="servesAlcohol" <c:if test="${form.servesAlcohol != null}">checked</c:if> class="form-check-input">
+                <input type="checkbox" id="servesAlcohol" name="servesAlcohol" value="servesAlcohol" <c:if test="${form.servesAlcohol}">checked</c:if> class="form-check-input">
                 <label for="servesAlcohol" class="form-check-label">Serves Alcohol</label>
             </div>
         </div>

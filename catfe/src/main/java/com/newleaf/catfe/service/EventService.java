@@ -1,14 +1,7 @@
 package com.newleaf.catfe.service;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.time.DateUtils;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 @Slf4j
 @Service
@@ -32,4 +25,30 @@ public class EventService {
 //
 //        return result;
 //    }
+
+    public String boolToString(boolean bool){
+        String str;
+        if (bool == true) {
+            str = "true";
+        } else {
+            str = null;
+        }
+        return str;
+    }
+
+    public boolean stringToBool(String str){
+        boolean bool;
+        if (str != null) {
+            bool = true;
+        } else {
+            bool = false;
+        }
+        return bool;
+    }
+
+    public String truncateURL(String fullURL, String toRemove) {
+        String result = fullURL;
+        result = result.replace(toRemove, "");
+        return result;
+    }
 }

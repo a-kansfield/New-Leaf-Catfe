@@ -6,14 +6,15 @@
     <div class="title-hr"></div>
 </section>
 <section class="container">
-    <table>
+    <a href="cats/new">[+]</a>
+    <table class="table table-striped">
         <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Age</th>
-            <th scope="col">Description</th>
-            <th scope="col">Adoption Status</th>
+            <th scope="col" class="description-column">Description</th>
+<%--            <th scope="col">Adoption Status</th>--%>
             <th scope="col">Gender</th>
             <th scope="col">Edit</th>
         </tr>
@@ -26,10 +27,10 @@
                 </td>
                 <td>${cat.name}</td>
                 <td>${cat.age}</td>
-                <td class="description-column">${cat.description}</td>
-                <td>${cat.adoptionStatus}</td>
+                <td class="description-row">${cat.description}</td>
+<%--                <td>${cat.adoptionStatus}</td>--%>
                 <td>${cat.gender}</td>
-                <td>Edit</td>
+                <td><a href="cats/${cat.id}/edit">Edit</a></td>
             </tr>
         </c:forEach>
         </tbody>

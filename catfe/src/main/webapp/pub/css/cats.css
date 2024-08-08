@@ -91,4 +91,13 @@
   padding: 2rem;
 }
 
+.radio {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#description {
+  min-height: 110px;
+}
+
 /*# sourceMappingURL=cats.css.map */
