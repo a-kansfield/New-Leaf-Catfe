@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="/pub/css/account.css">
     <link rel="stylesheet" href="/pub/css/table.css">
     <link rel="stylesheet" href="/pub/css/form.css">
+    <link rel="stylesheet" href="/pub/css/error.css">
 
     <!------- Fonts ------->
     <link rel="preconnect" href="https://fonts.googleapis.com">
