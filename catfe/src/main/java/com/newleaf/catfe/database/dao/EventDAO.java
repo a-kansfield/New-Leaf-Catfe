@@ -13,9 +13,12 @@ public interface EventDAO extends JpaRepository<Event, Long> {
 
 List<Event> findByCat(Cat cat);
 
+List<Event> findByTitle(String title);
+
     @Query(value="SELECT e.*, c.name, c.description AS cat_description, c.image_url AS cat_image_url"
             +   " FROM events e "
             +   " JOIN cats c ON c.id = e.featured_cat "
             +   " WHERE e.id = :id;", nativeQuery = true)
     Map<String,Object> getEventDetails(Integer id);
+
 }

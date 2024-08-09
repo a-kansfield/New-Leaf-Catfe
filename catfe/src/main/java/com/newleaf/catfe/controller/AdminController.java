@@ -10,10 +10,14 @@ import com.newleaf.catfe.form.CreateEventFormBean;
 import com.newleaf.catfe.service.CatService;
 import com.newleaf.catfe.service.EventService;
 import com.newleaf.catfe.util.ConversionUtil;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,7 +50,6 @@ public class AdminController {
     @Autowired
     private ConversionUtil conversionUtil;
 
-    private String dir = "../../../pub/assets/imgs/";
 
     // ######### Cats ######### //
     @GetMapping("/cats")
@@ -110,26 +113,35 @@ public class AdminController {
         return response;
     }
     @PostMapping("/events/new")
-    public ModelAndView eventSubmit(/*@Valid*/ CreateEventFormBean form/*, BindingResult bindingResult*/) {
+    public ModelAndView eventSubmit(@Valid CreateEventFormBean form, BindingResult bindingResult) {
         ModelAndView response = new ModelAndView("admin/create-event");
 
-        //Error Checking
-//        if(bindingResult.hasErrors()) {
-//            for (ObjectError error : bindingResult.getAllErrors()) {
-//                log.debug("Validation error : " + ((FieldError) error).getField() + " = " + error.getDefaultMessage());
-//            }
-//            // Still Within error statement
-//
-//            response.addObject("bindingResult", bindingResult); // Adds error to view to use in JSP page.
-//
-//
-//        }
+       // Error Checking
+        if(bindingResult.hasErrors()) {
+            for (ObjectError error : bindingResult.getAllErrors()) {
+                log.debug("Validation error : " + ((FieldError) error).getField() + " = " + error.getDefaultMessage());
+            }
 
-        Event event = eventService.findOrCreateEvent(form.getId());
-        event = eventService.saveEvent(event, form);
+            // Still Within error statement
+            response.addObject("bindingResult", bindingResult); // Adds error to view to use in JSP page.
 
-        response.addObject("form", form);
-        return response;
+            //Copied from edit and create, as this needs to be repopulated as a result of an error.
+            List<Cat> cats = catDAO.findAll();
+
+            response.addObject("cats", cats);
+            response.setViewName("admin/create-event");
+
+            return response;
+
+        } else {
+
+            Event event = eventService.findOrCreateEvent(form.getId());
+            event = eventService.saveEvent(event, form);
+
+            response.addObject("form", form);
+            return response;
+
+        }
     }
 
     @GetMapping("/events/{id}/edit")
@@ -138,12 +150,11 @@ public class AdminController {
 
         List<Cat> cats = catDAO.findAll();
 
-        Event event = eventService.findOrCreateEvent(id);
-        CreateEventFormBean form = eventService.populateEventForm(event);
+        Event event = eventService.findOrCreateEvent(id);                   // Checks to see if event already exists. If not, create new event
+        CreateEventFormBean form = eventService.populateEventForm(event);   // Fills the event form based on event values.
 
         response.addObject("form", form);
         response.addObject("cats", cats);
-        response.addObject("eventCatId", event.getCat().getId()); //Attempt to get select to autopopulate correctly
 
         return response;
     }

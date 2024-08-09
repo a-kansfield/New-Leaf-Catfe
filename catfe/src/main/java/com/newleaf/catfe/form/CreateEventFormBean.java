@@ -1,8 +1,7 @@
 package com.newleaf.catfe.form;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
@@ -18,17 +17,18 @@ public class CreateEventFormBean {
 
     private Integer id;
 
-    @NotEmpty(message = "Email is required.")
+    @NotEmpty(message = "Title is required.")
     @Length(max = 80, message = "Title must be less than 80 characters.")
     private String title;
 
     private String description;
 
-    @NotEmpty(message = "Start Date required.")
+
+    @NotNull(message="Start Date required.")
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private Date startDate;
 
-    @NotEmpty(message = "End Date required.")
+    @NotNull(message="End Date required.")
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private Date endDate;
 
@@ -38,5 +38,6 @@ public class CreateEventFormBean {
 
     private String imageURL;
 
+    @NotNull(message = "Cat is required.")
     private Integer featuredCat;
 }

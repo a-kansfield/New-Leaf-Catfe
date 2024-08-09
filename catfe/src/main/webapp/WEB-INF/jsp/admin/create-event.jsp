@@ -15,7 +15,13 @@
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" id="title" name="title" value="${form.title}"
-                           placeholder="Event Title" class="form-control">
+                           placeholder="Event Title" class="form-control"
+                           <c:if test="${bindingResult.hasFieldErrors('title')}">is-invalid</c:if>>
+                    <c:if test="${bindingResult.hasFieldErrors('title')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('title')}" var="error">
+                            <small id="emailHelp" class="form-text text-danger">${error.defaultMessage}</small>
+                        </c:forEach>
+                    </c:if>
                 </div>
             </div>
         </div>
@@ -34,13 +40,25 @@
             <div class="col-6">
                 <div class="form-group">
                     <label for="startDate">Start Date</label>
-                    <input type="datetime-local" id="startDate" name="startDate" value="${form.startDate}" class="form-control">
+                    <input type="datetime-local" id="startDate" name="startDate" value="${form.startDate}" class="form-control"
+                           <c:if test="${bindingResult.hasFieldErrors('startDate')}">is-invalid</c:if>>
+                    <c:if test="${bindingResult.hasFieldErrors('startDate')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('startDate')}" var="error">
+                            <small id="emailHelp" class="form-text text-danger">${error.defaultMessage}</small>
+                        </c:forEach>
+                    </c:if>
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <label for="endDate">End Date</label>
-                    <input type="datetime-local" id="endDate" name="endDate" value="${form.endDate}" class="form-control">
+                    <input type="datetime-local" id="endDate" name="endDate" value="${form.endDate}" class="form-control"
+                           <c:if test="${bindingResult.hasFieldErrors('endDate')}">is-invalid</c:if>>
+                    <c:if test="${bindingResult.hasFieldErrors('endDate')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('endDate')}" var="error">
+                            <small id="emailHelp" class="form-text text-danger">${error.defaultMessage}</small>
+                        </c:forEach>
+                    </c:if>
                 </div>
             </div>
 
@@ -69,18 +87,24 @@
 
                 <div class="form-group">
                     <label for="featuredCat">Featured Cat</label>
-                    <select id="featuredCat" name="featuredCat" value="${form.featuredCat}" placeholder="Featured Cat" class="form-select">
+                    <select id="featuredCat" name="featuredCat" value="${form.featuredCat}" placeholder="Featured Cat" class="form-select"
+                            <c:if test="${bindingResult.hasFieldErrors('featuredCat')}">is-invalid</c:if>>
 
                         <option disabled selected value>-- Select a Cat --</option>
                         <c:forEach items="${cats}" var="cat">
                             <option value="${cat.id}"
-                                    <c:if test="${cat.id.toString() == eventCatId.toString()} ">
+                                    <c:if test="${cat.id == form.featuredCat} ">
                                         selected="selected"
                                     </c:if>
                             >${cat.name}
                             </option>
                         </c:forEach>
                     </select>
+                    <c:if test="${bindingResult.hasFieldErrors('featuredCat')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('featuredCat')}" var="error">
+                            <small id="emailHelp" class="form-text text-danger">${error.defaultMessage}</small>
+                        </c:forEach>
+                    </c:if>
                 </div>
             </div>
         </div> <%-- End Row --%>
