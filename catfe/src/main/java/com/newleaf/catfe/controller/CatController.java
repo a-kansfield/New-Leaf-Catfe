@@ -24,6 +24,7 @@ public class CatController {
 
     @Autowired
     private EventDAO eventDAO;
+
     @GetMapping("/")
     public ModelAndView catHome(){
         ModelAndView response = new ModelAndView("cats/cats");

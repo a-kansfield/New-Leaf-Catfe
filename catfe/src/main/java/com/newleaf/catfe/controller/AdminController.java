@@ -7,7 +7,7 @@ import com.newleaf.catfe.database.entity.Cat;
 import com.newleaf.catfe.database.entity.Event;
 import com.newleaf.catfe.form.CreateCatFormBean;
 import com.newleaf.catfe.form.CreateEventFormBean;
-import com.newleaf.catfe.service.EventService;
+import com.newleaf.catfe.util.ConversionUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -36,7 +36,7 @@ public class AdminController {
     private UserDAO userDAO;
 
     @Autowired
-    private EventService eventService;
+    private ConversionUtil conversionUtil;
 
     private String dir = "../../../pub/assets/imgs/";
 
@@ -63,7 +63,7 @@ public class AdminController {
         ModelAndView response = new ModelAndView("admin/create-cat");
         Cat cat = catDAO.findById(id);
         String toRemove = dir +"cats/";
-        String url = eventService.truncateURL(cat.getImageURL(), toRemove);
+        String url = conversionUtil.truncateURL(cat.getImageURL(), toRemove);
         CreateCatFormBean form = new CreateCatFormBean();
         form.setId(id);
 
@@ -119,8 +119,23 @@ public class AdminController {
         return response;
     }
     @PostMapping("/events/new")
-    public ModelAndView eventSubmit(CreateEventFormBean form) {
+    public ModelAndView eventSubmit(/*@Valid*/ CreateEventFormBean form/*, BindingResult bindingResult*/) {
         ModelAndView response = new ModelAndView("admin/create-event");
+
+        //Error Checking
+//        if(bindingResult.hasErrors()) {
+//            for (ObjectError error : bindingResult.getAllErrors()) {
+//                log.debug("Validation error : " + ((FieldError) error).getField() + " = " + error.getDefaultMessage());
+//            }
+//            // Still Within error statement
+//
+//            response.addObject("bindingResult", bindingResult); // Adds error to view to use in JSP page.
+//
+//
+//        }
+
+
+
         response.addObject("form", form);
         String url = dir + "events/" + form.getImageURL();
 
@@ -169,10 +184,10 @@ public class AdminController {
         form.setCapacity(event.getCapacity());
 
         form.setFeaturedCat(event.getCat().getId());
-        form.setServesAlcohol(eventService.boolToString(event.isServesAlcohol()));
+        form.setServesAlcohol(conversionUtil.boolToString(event.isServesAlcohol()));
 
         String toRemove = dir +"events/";
-        String url = eventService.truncateURL(event.getImageURL(), toRemove);
+        String url = conversionUtil.truncateURL(event.getImageURL(), toRemove);
         form.setImageURL(url);
 
         response.addObject("form", form);

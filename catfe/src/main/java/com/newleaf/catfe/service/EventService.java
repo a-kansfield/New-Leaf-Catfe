@@ -26,29 +26,5 @@ public class EventService {
 //        return result;
 //    }
 
-    public String boolToString(boolean bool){
-        String str;
-        if (bool == true) {
-            str = "true";
-        } else {
-            str = null;
-        }
-        return str;
-    }
 
-    public boolean stringToBool(String str){
-        boolean bool;
-        if (str != null) {
-            bool = true;
-        } else {
-            bool = false;
-        }
-        return bool;
-    }
-
-    public String truncateURL(String fullURL, String toRemove) {
-        String result = fullURL;
-        result = result.replace(toRemove, "");
-        return result;
-    }
 }
