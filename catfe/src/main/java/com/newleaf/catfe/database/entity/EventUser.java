@@ -34,6 +34,8 @@ public class EventUser {
     @Column(name = "event_id", insertable = false, updatable = false)
     private Integer eventID;
 
+
+
     @Column(name = "adoption_interest")
     private String adoptionInterest;
 

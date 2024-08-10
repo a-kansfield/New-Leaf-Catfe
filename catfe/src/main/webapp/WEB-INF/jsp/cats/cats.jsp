@@ -5,6 +5,55 @@
     <div class="title-hr"></div>
 </section>
 
+
+<%--</style>--%>
+
+<!-- Swiper -->
+<section class="container swiper-container">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <c:forEach items="${cats}" var = "cat">
+                <div class="swiper-slide">
+                    <div class="image-container circle-grow">
+                        <img src="${cat.imageURL}" alt="">
+                    </div>
+                    <div class="text-container">
+                            ${cat.name}
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    let swiper = new Swiper(".mySwiper", {
+        slidesPerView:4,
+        centeredSlides: true,
+
+        loop: true,
+        effect: 'coverflow',
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth:400,
+            slideShadows: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+
+
 <section class="container cats-container">
     <c:forEach items="${cats}" var = "cat">
         <div class="cat-container">
