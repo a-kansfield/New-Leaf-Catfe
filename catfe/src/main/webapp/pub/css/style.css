@@ -19,6 +19,12 @@ body {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 46%, rgb(0, 0, 0) 58%, rgba(0, 0, 0, 0) 100%);
 }
 
+.swiper-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header {
   background: radial-gradient(circle, rgba(240, 233, 246, 0.4) 0%, rgba(221, 206, 242, 0.4) 52%, rgba(209, 209, 240, 0.4) 100%);
 }

@@ -35,6 +35,12 @@ body {
 
 }
 
+.swiper-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .header {
     background: $header-bg-clr;
 }

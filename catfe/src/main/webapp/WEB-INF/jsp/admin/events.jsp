@@ -7,7 +7,7 @@
 </section>
 
 <section class="container">
-    <div><a href="../admin/events/new">+</a></div>
+    <div><a href="../admin/events/new">[+]</a></div>
     <table class="table table-striped">
         <thead>
         <tr>

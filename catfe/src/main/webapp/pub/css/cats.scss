@@ -46,7 +46,7 @@ $text-bg: rgb(237, 242, 247);
         }
     }
 
-    .swiper-slide img {
+    .swiper-slide-img {
         display: block;
         width: auto;
         height: 100%;
@@ -63,10 +63,11 @@ $text-bg: rgb(237, 242, 247);
         object-fit: contain;
         margin-bottom: 1rem;
         border: 1rem solid $text-bg;
+        a {
+            display: contents;
+            
+        }
     }
-.swiper-container {
-    margin: 5rem;
-}
 .cats-container {
     margin-top: 3rem;
     border-radius: .7rem;

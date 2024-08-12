@@ -15,7 +15,9 @@
             <c:forEach items="${cats}" var = "cat">
                 <div class="swiper-slide">
                     <div class="image-container circle-grow">
-                        <img src="${cat.imageURL}" alt="">
+                        <a href="/cats/${cat.id}">
+                            <img class="swiper-slide-img" src="${cat.imageURL}" alt="">
+                        </a>
                     </div>
                     <div class="text-container">
                             ${cat.name}
@@ -54,20 +56,20 @@
 </script>
 
 
-<section class="container cats-container">
-    <c:forEach items="${cats}" var = "cat">
-        <div class="cat-container">
-            <div class="image-container circle-grow">
-                <a href="/cats/${cat.id}"><img src=${cat.imageURL} alt="" class = "cat-image"></a>
-            </div>
-            <div class="text-container">
-                <h2>${cat.name}</h2>
-            </div>
-        </div>
-    </c:forEach>
+<%--<section class="container cats-container">--%>
+<%--    <c:forEach items="${cats}" var = "cat">--%>
+<%--        <div class="cat-container">--%>
+<%--            <div class="image-container circle-grow">--%>
+<%--                <a href="/cats/${cat.id}"><img src=${cat.imageURL} alt="" class = "cat-image"></a>--%>
+<%--            </div>--%>
+<%--            <div class="text-container">--%>
+<%--                <h2>${cat.name}</h2>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </c:forEach>--%>
 
 
-</section>
+<%--</section>--%>
 
 
 <jsp:include page="../include/footer.jsp"/>

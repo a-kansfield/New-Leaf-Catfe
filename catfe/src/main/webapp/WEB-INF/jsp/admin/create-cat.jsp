@@ -61,7 +61,7 @@
                     <label for="description">Description</label>
                     <textarea id="description" name="description"
                               value="${form.description}"
-                              placeholder="Event Description" class="form-control">${form.description}</textarea>
+                              placeholder="Cat Description" class="form-control">${form.description}</textarea>
                 </div>
             </div>
         </div>
