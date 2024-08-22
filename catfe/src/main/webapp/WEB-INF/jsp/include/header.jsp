@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="/pub/css/table.css">
     <link rel="stylesheet" href="/pub/css/form.css">
     <link rel="stylesheet" href="/pub/css/error.css">
+    <link rel="stylesheet" href="/pub/css/menu.css">
 
     <!------- Fonts ------->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,11 +79,11 @@
                     Cats
                 </a>
             </li>
-<%--            <li class="nav-item">--%>
-<%--                <a href="/menu/" class="nav-link">--%>
-<%--                    Menu--%>
-<%--                </a>--%>
-<%--            </li>--%>
+            <li class="nav-item">
+                <a href="/menu/" class="nav-link">
+                    Menu
+                </a>
+            </li>
 
         </ul>
 
