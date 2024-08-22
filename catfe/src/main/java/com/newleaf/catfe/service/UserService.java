@@ -25,6 +25,8 @@ public class UserService {
         String encryptedPassword = passwordEncoder.encode(form.getPassword());
         user.setPassword(encryptedPassword);
 
+        user.setFirstName(form.getFirstName());
+        user.setLastName(form.getLastName());
         log.debug(user.toString());
         userDAO.save(user);
 

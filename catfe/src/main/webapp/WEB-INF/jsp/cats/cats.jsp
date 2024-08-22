@@ -28,6 +28,10 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
+    <div class="swiper-btns">
+
+    </div>
+
 </section>
 
 
@@ -39,7 +43,7 @@
     let swiper = new Swiper(".mySwiper", {
         slidesPerView:4,
         centeredSlides: true,
-
+        spaceBetween: 100,
         loop: true,
         effect: 'coverflow',
         coverflowEffect: {
@@ -68,6 +72,7 @@
 <%--        </div>--%>
 <%--    </c:forEach>--%>
 
+<%--str1 eq str2--%>
 
 <%--</section>--%>
 

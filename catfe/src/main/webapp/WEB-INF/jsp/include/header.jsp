@@ -78,11 +78,11 @@
                     Cats
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="/menu/" class="nav-link">
-                    Menu
-                </a>
-            </li>
+<%--            <li class="nav-item">--%>
+<%--                <a href="/menu/" class="nav-link">--%>
+<%--                    Menu--%>
+<%--                </a>--%>
+<%--            </li>--%>
 
         </ul>
 
@@ -116,11 +116,11 @@
 <%--                    Schedule--%>
 <%--                </a>--%>
 <%--            </li>--%>
-            <li class="nav-item">
-                <a href="/about" class="nav-link">
-                    About
-                </a>
-            </li>
+<%--            <li class="nav-item">--%>
+<%--                <a href="/about" class="nav-link">--%>
+<%--                    About--%>
+<%--                </a>--%>
+<%--            </li>--%>
 
 
             <li class="nav-item login-container">

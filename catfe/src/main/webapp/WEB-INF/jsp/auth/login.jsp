@@ -18,8 +18,6 @@
                 <input type="password" name="password" id="password" class="form-control">
             </div>
 
-
-
             <button type="submit" class="btn">Submit</button>
         </form>
     </div>

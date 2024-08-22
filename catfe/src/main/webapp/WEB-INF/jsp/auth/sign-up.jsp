@@ -18,6 +18,18 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" id="password" name="password" class="form-control" value="${form.password}">
             </div>
+            <div class="separator">
+
+            </div>
+            <div class="form-group">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" id="firstName" name="firstName" class="form-control" value="${form.firstName}">
+            </div>
+
+            <div class="form-group">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" id="lastName" name="lastName" class="form-control" value="${form.lastName}">
+            </div>
 
 
 
