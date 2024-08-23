@@ -8,14 +8,15 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(94, 58, 58);
-  height: 800px;
+  height: auto;
   width: 100%;
   margin-bottom: 5rem;
 }
 .menu-board .menu-board-center {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   background-image: url("../assets/imgs/menu/black-chalkboard-background.png");
   background-color: rgb(34, 43, 34);
   box-shadow: inset 0px 0px 15px 2px rgb(22, 26, 26);
@@ -26,9 +27,78 @@
   width: 100%;
   height: 92%;
   margin: 2rem;
+  font-family: "Annie Use Your Telescope", sans-serif;
+  letter-spacing: 2px;
 }
-.menu-board .menu-board-center .menu-text {
+.menu-board .menu-board-center .menu-title-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+}
+.menu-board .menu-board-center .menu-title-container .menu-title {
+  color: rgba(206, 201, 188, 0.8);
+  font-size: 8rem;
+  line-height: 3rem;
+}
+.menu-board .menu-board-center .flex-row {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  position: relative;
+  left: -20px;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+.menu-board .menu-board-center .flex-row .drink-img-container {
+  text-align: center;
+  width: 240px;
+  height: 240px;
+}
+.menu-board .menu-board-center .flex-row .drink-img-container .drink-img {
+  object-fit: contain;
+}
+.menu-board .menu-board-center .flex-row .text-container {
+  margin-left: 3rem;
+  font-size: 1.8rem;
+  height: 240px;
+  color: rgba(206, 201, 188, 0.8);
+}
+.menu-board .menu-board-center .flex-row .text-container .drink-name {
+  list-style-type: circle;
+}
+.menu-board .menu-board-center .flex-row .price {
+  padding-right: 3rem;
+}
+.menu-board .menu-board-center .flex-row .drink-name-container {
+  width: auto;
+}
+.menu-board .menu-board-center .flex-row .menu-text {
   flex-grow: 1;
+}
+.menu-board .menu-board-center .bottom {
+  margin-bottom: 2rem;
+}
+.menu-board .menu-subtitle-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.menu-board .menu-subtitle-container .menu-subtitle {
+  color: rgba(206, 201, 188, 0.8);
+  font-size: 3rem;
+}
+
+.expand {
+  flex-grow: 1;
+}
+
+.flex-right {
+  justify-content: right;
+  padding-right: 3rem;
 }
 
 /*# sourceMappingURL=menu.css.map */

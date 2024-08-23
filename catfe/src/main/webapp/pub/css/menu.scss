@@ -9,13 +9,14 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(94, 58, 58);
-    height: 800px;
+    height: auto;
     width: 100%;
     margin-bottom: 5rem;
     .menu-board-center {
         display: flex;
         justify-content: space-around;
-        align-items: center;
+        align-items: flex-start;
+        flex-direction: column;
         background-image: url('../assets/imgs/menu/black-chalkboard-background.png') ;
         background-color: rgb(34, 43, 34);
         box-shadow: inset 0px 0px 15px 2px rgb(22, 26, 26);
@@ -26,11 +27,86 @@
         width: 100%;
         height: 92%;
         margin: 2rem;
-        .drink-img {
+        font-family: "Annie Use Your Telescope", sans-serif;
+        letter-spacing: 2px;
+
+        .menu-title-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 5rem;
+            margin-bottom: 1rem;
+            .menu-title {
+                color: rgb(206, 201, 188, .8);
+                font-size: 8rem;
+                line-height: 3rem;
+            }
         }
-        .menu-text {
-            flex-grow: 1;
+        .flex-row {
+            margin-left: 1rem;
+            margin-right: 1rem;
+            display: flex;
+            position: relative;
+            left: -20px;
+            width: 100%;
+            height: auto;
+
+            padding: 1rem;
+            padding-bottom: 0;
+            .drink-img-container {
+                text-align: center;
+                width: 240px;
+                height: 240px;
+                .drink-img {
+                    object-fit: contain;
+                }
+            }
+            .text-container {
+                margin-left: 3rem;
+                // justify-content: flex-start;
+                font-size: 1.8rem;
+                // flex-grow: 1;
+                height: 240px;
+                color: rgb(206, 201, 188, .8);
+                .drink-name {
+                    list-style-type: circle;
+                }
+            }
+            .price {
+                padding-right: 3rem;
+            }
+            .drink-name-container {
+                width: auto;
+            }
+            .menu-text {
+                flex-grow: 1;
+            }
+        }
+        .bottom{
+            margin-bottom: 2rem;
         }
     }
 
+    .menu-subtitle-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        .menu-subtitle {
+            color: rgb(206, 201, 188, .8);
+            font-size: 3rem;
+        }
+    }
+
+}
+
+.expand {
+    flex-grow: 1;
+}
+
+.flex-right {
+    justify-content: right;
+    padding-right: 3rem;
+}
+
+#tea-img {
 }
