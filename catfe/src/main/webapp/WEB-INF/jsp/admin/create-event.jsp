@@ -123,6 +123,12 @@
 
     </form>
 
+    <c:if test="${form.id != null}">
+        <form action="../../../admin/events/delete" method="post">
+            <input type="hidden" name="id" value="${form.id}">
+            <button type="submit" class="btn submit-btn">Delete Event</button>
+        </form>
+    </c:if>
 </section>
 
 

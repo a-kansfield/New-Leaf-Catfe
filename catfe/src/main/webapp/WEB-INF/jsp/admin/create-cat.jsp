@@ -71,5 +71,11 @@
             </div>
         </div>
     </form>
+    <c:if test="${form.id != null}">
+        <form action="../../../admin/cats/delete" method="post">
+            <input type="hidden" name="id" value="${form.id}">
+            <button type="submit" class="btn submit-btn">Delete Cat</button>
+        </form>
+    </c:if>
 </section>
 <jsp:include page="../include/footer.jsp"/>

@@ -89,9 +89,22 @@ public class AdminController {
 
         Cat cat = catService.findOrCreateCat(form.getId());
         cat = catService.saveCat(form, cat);
-
+        response.setViewName("redirect:/admin/cats");
         return response;
     }
+    // Note: Currently, deleting a cat that is associated with an event will also delete the event. Unaffiliate cat with event before deletion
+    @PostMapping("/cats/delete")
+    public ModelAndView deleteEvent(CreateCatFormBean form) {
+        ModelAndView response = new ModelAndView();
+
+        response.addObject("form", form);
+        Cat cat = catService.findOrCreateCat(form.getId());
+        log.debug("Deleting " + cat.getName() + " from cat database.");
+        catDAO.delete(cat);
+        response.setViewName("redirect:/admin/cats");
+        return response;
+    }
+
 
     // ######### Events ######### //
     @GetMapping("/events")
@@ -139,6 +152,7 @@ public class AdminController {
             event = eventService.saveEvent(event, form);
 
             response.addObject("form", form);
+            response.setViewName("redirect:/admin/events");
             return response;
 
         }
@@ -158,4 +172,18 @@ public class AdminController {
 
         return response;
     }
+
+    @PostMapping("/events/delete")
+    public ModelAndView deleteEvent(CreateEventFormBean form) {
+        ModelAndView response = new ModelAndView();
+
+        response.addObject("form", form);
+        Event event = eventService.findOrCreateEvent(form.getId());
+        log.debug("Deleting " + event.getTitle() + " from event database.");
+        eventDAO.delete(event);
+        response.setViewName("redirect:/admin/events");
+        return response;
+    }
+
 }
+
