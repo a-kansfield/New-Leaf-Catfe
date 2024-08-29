@@ -59,7 +59,8 @@
   height: 240px;
 }
 .menu-board .menu-board-center .flex-row .drink-img-container .drink-img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .menu-board .menu-board-center .flex-row .text-container {
   margin-left: 3rem;
@@ -99,6 +100,4 @@
 .flex-right {
   justify-content: right;
   padding-right: 3rem;
-}
-
-/*# sourceMappingURL=menu.css.map */
+}/*# sourceMappingURL=menu.css.map */
